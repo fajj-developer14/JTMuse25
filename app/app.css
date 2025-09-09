@@ -1,15 +1,195 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@keyframes breathe {
+  0%, 100% {
+    filter: blur(3px) brightness(0.75) saturate(0.8);
+    -webkit-filter: blur(3px) brightness(0.75) saturate(0.8);
+}
+  50% {
+    filter: blur(0px) brightness(0.75) saturate(0.8);
+    -webkit-filter: blur(0px) brightness(0.75) saturate(0.8);
+}
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes paintReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes logoBreathe {
+  0%, 100% {
+    filter: saturate(1);
+  }
+  50% {
+    filter: saturate(1.3);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.particle-1 {
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #FFD700, #FFA500);
+  animation: floatUp 15s infinite linear;
+  left: 10%;
+  animation-delay: -2s;
+}
+
+.particle-2 {
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #CD853F, #D2691E);
+  animation: floatUp 18s infinite linear;
+  left: 80%;
+  animation-delay: -5s;
+}
+
+.particle-3 {
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, #FF6347, #DC143C);
+  animation: floatUp 20s infinite linear;
+  left: 30%;
+  animation-delay: -8s;
+}
+
+.particle-4 {
+  width: 5px;
+  height: 5px;
+  background: radial-gradient(circle, #DAA520, #B8860B);
+  animation: floatUp 16s infinite linear;
+  left: 60%;
+  animation-delay: -12s;
+}
+
+.particle-5 {
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #F4A460, #DEB887);
+  animation: floatUp 22s infinite linear;
+  left: 90%;
+  animation-delay: -15s;
+}
+
+.floating-accent {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent);
+  animation: gentleFloat 8s ease-in-out infinite;
+}
+
+.floating-accent-1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 15%;
+  animation-delay: -1s;
+}
+
+.floating-accent-2 {
+  width: 60px;
+  height: 60px;
+  top: 60%;
+  right: 20%;
+  animation-delay: -4s;
+}
+
+.shimmer-dot {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #FFD700;
+  border-radius: 50%;
+  animation: shimmer 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.shimmer-dot-1 {
+  top: 25%;
+  left: 25%;
+  animation-delay: -1s;
+}
+
+.shimmer-dot-2 {
+  top: 75%;
+  right: 30%;
+  animation-delay: -2.5s;
+}
+
+.shimmer-dot-3 {
+  top: 40%;
+  right: 15%;
+  animation-delay: -3.5s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
