@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
 
 export function meta({}) {
   return [
@@ -14,7 +13,6 @@ export function meta({}) {
 export default function Home() {
   return (
     <div>
-      <Navbar />
       <Hero />;
     </div>
   );
