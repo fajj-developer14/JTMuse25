@@ -54,7 +54,7 @@ export function Layout({ children }) {
             zIndex: -1,
           }}
         ></div>
-        <Navbar />
+        {/*<Navbar />*/}
         {children}
         <Footer />
         <ScrollRestoration />

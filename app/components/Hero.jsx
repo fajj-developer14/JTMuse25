@@ -21,24 +21,16 @@ const Hero = () => {
 
       <div className="relative z-10 flex flex-col items-center justify-center">
         <div
-          className="text-center mb-[-6rem] z-20"
+          className="text-center z-20 mb-[-3rem] sm:mb-[-6rem]"
           style={{
             animation: "fadeInUp 1.5s ease-out 0.3s both",
           }}
         >
-          <h1
-            className="text-4xl md:text-6xl font-light tracking-[0.3em] uppercase"
-            style={{
-              fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-              fontWeight: "300",
-              letterSpacing: "0.3em",
-              color: "#FFD700",
-              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
-              animation: "paintReveal 2s ease-in-out 0.5s both",
-            }}
-          >
-            LGS JT PRESENTS
-          </h1>
+          <img 
+            src="/assets/images/top_line.png" 
+            alt="Top Decorative Line" 
+            className="w-auto  h-auto mt-[-2rem] sm:mt-[-6rem] mx-auto"
+          />
         </div>
 
         <div
@@ -64,6 +56,8 @@ const Hero = () => {
             animation: "fadeInUp 1.2s ease-out 2.2s both",
           }}
         >
+          <h2 className="font-bold text-[#dfc797] text-4xl text-center mt-[2rem]">coming soon...</h2>
+          {/*
           <Button
             text="REGISTER NOW"
             color="rgba(255, 215, 0, 0.25)"
@@ -71,7 +65,7 @@ const Hero = () => {
             textColor="#fff"
             onClick={() => navigate("/")}
           />
-          {/* redirecting to "/" for now, will change later */}
+          */}
         </div>
       </div>
     </main>
