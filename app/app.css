@@ -69,26 +69,7 @@
   }
 }
 
-@keyframes logoBreathe {
-  0%,
-  100% {
-    filter: saturate(1);
-  }
-  50% {
-    filter: saturate(1.3);
-  }
-}
-@keyframes breathe {
-  0%,
-  100% {
-    filter: brightness(0.93) saturate(0.93);
-    -webkit-filter: brightness(0.93) saturate(0.93);
-}
-  50% {
-    filter: brightness(0.93) saturate(0.93);
-    -webkit-filter: brightness(0.93) saturate(0.93);
-}
-}
+
 
 @keyframes floatUp {
   0% {
