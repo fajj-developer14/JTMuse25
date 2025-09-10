@@ -17,7 +17,13 @@ const Footer = () => {
                             href="https://github.com/ARTariqDev" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="hover:text-white/90 transition-colors duration-200 underline decoration-dotted"
+                            className="hover:text-white/90 transition-colors duration-200 text-white/50 focus:outline-none"
+                            style={{
+                                textDecoration: 'none',
+                                transition: 'box-shadow 0.2s',
+                            }}
+                            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 0 8px 2px #FFD700'}
+                            onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
                         >
                             Abdur Rehman Tariq
                         </a>
@@ -26,13 +32,31 @@ const Footer = () => {
                             href="https://github.com/fajj-developer14" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="hover:text-white/90 transition-colors duration-200 underline decoration-dotted"
+                            className="hover:text-white/90 transition-colors duration-200 text-white/50 focus:outline-none"
+                            style={{
+                                textDecoration: 'none',
+                                transition: 'box-shadow 0.2s',
+                            }}
+                            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 0 8px 2px #FFD700'}
+                            onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
                         >
                             Syed Farjad Abbas
                         </a>
                         <span className="text-white/30">⚬</span>
-                        <span className="text-white/50">Abdul Wasiq Khan</span>
-                        {/* I don't have Wasiq's GitHub so we'll add this later */}
+                        <a 
+                            href="https://github.com/Abdul-Wasiq-Khan" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="hover:text-white/90 transition-colors duration-200 text-white/50 focus:outline-none"
+                            style={{
+                                textDecoration: 'none',
+                                transition: 'box-shadow 0.2s',
+                            }}
+                            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 0 8px 2px #FFD700'}
+                            onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
+                        >
+                            Abdul Wasiq Khan
+                        </a>
                     </div>
                 </div>
             </div>

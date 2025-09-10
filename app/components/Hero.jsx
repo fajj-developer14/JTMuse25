@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+import Button from "./Button";
+
 const Hero = () => {
+    const navigate = useNavigate();
     return (
         <main className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
             {/* Floating particles and other stuff */}
@@ -54,6 +58,23 @@ const Hero = () => {
                             animation: 'paintReveal 2.5s ease-in-out 1.5s both, logoBreathe 4s ease-in-out 4s infinite'
                         }}
                     />
+                </div>
+
+                
+                <div
+                    className="mt-[-4rem] z-20"
+                    style={{
+                        animation: 'fadeInUp 1.2s ease-out 2.2s both'
+                    }}
+                >
+                    <Button
+                        text="REGISTER NOW"
+                        color="rgba(255, 215, 0, 0.25)" 
+                        glowColor="#FFFFFF" 
+                        textColor="#fff"
+                        onClick={() => navigate('/')}
+                    />
+                    {/* redirecting to "/" for now, will change later */}
                 </div>
             </div>
         </main>
