@@ -50,7 +50,7 @@ const Hero = () => {
           <img
             src="/assets/images/logo.png"
             alt="Logo"
-            className="h-[80vh] w-auto object-contain"
+            className="h-[75vh] w-auto object-contain mb-[-4rem] mt-[-4rem]"
             style={{
               animation:
                 "paintReveal 2.5s ease-in-out 1.5s both, logoBreathe 4s ease-in-out 4s infinite",

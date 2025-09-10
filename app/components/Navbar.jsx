@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { NavLink, useLocation } from "react-router";
 import NavbarIcon from "./NavbarIcon";
 
 function Navbar() {
   const [isExpanded, setIsExpanded] = useState(false);
   const navbarRef = useRef(null);
-  const [tabStyles, setTabStyles] = useState({}); //to keep in track of the link position and width that is active
   const navlinksRef = useRef([]);
   const location = useLocation();
 
@@ -17,17 +16,11 @@ function Navbar() {
     { name: "contact", path: "contact" },
   ];
 
-  const handleActive = (index) => {
-    if (navlinksRef.current[index]) {
-      const el = navlinksRef.current[index];
-      setTabStyles({
-        left: el.offsetLeft || 210 + "px",
-        width: el.offsetWidth + "px",
-      });
-    }
-  };
 
-  useEffect(() => {
+
+
+  // Close navbar on outside click
+  React.useEffect(() => {
     const handleClick = (e) => {
       if (navbarRef.current && !navbarRef.current.contains(e.target)) {
         setIsExpanded(false);
@@ -39,55 +32,75 @@ function Navbar() {
     };
   }, []);
 
-  useEffect(() => {
-    const activeIndex = navlinksRef.current.findIndex(
-      (el) => el.getAttribute("href") === location.pathname
-    );
-    handleActive(activeIndex);
-    if (activeIndex !== -1) {
-      window.addEventListener("resize", () => handleActive(activeIndex));
-    }
-    return () => {
-      if (activeIndex !== -1) {
-        window.removeEventListener("resize", () => handleActive(activeIndex));
-      }
-    };
-  }, [location]);
+
 
   return (
     <nav
       ref={navbarRef}
-      className="fixed right-0 left-0 px-4 py-3 z-51 border-b border-white/10 text-slate-50 mx-2 mt-2 md:mt-2.5 rounded-xl"
+  className="fixed top-0 left-1/2 transform -translate-x-1/2 w-fit max-w-full px-2 sm:px-4 py-2 sm:py-3 z-51 border-b border-white/10 text-slate-50 mt-2 md:mt-2.5 rounded-xl transition-all duration-300"
     >
       <div className="absolute inset-0 bg-black/20 backdrop-blur-sm z-49 rounded-xl" />
 
-      <div className="z-50 relative flex justify-between items-center max-w-7xl mx-auto flex-wrap sm:flex-nowrap sm:justify-between">
-        <div className="flex items-center">
-          <h2 className="text-2xl">
+  <div className="z-50 relative flex justify-between items-center mx-auto flex-wrap sm:flex-nowrap sm:justify-between gap-1 xs:gap-2 sm:gap-4">
+
+        {/* MUSE'25 text and separator line, only on mobile cause it was causing issues on desktop*/}
+        <div className="flex items-center sm:hidden">
+          <h2 className="text-[13px] xs:text-sm whitespace-nowrap">
             MUSE
-            <span className="text-xs text-yellow-500 animate-pulse inline-block ml-1.5">
-              '25
-            </span>
+            <span className="text-[8px] xs:text-[10px] text-yellow-500 animate-pulse inline-block align-baseline ml-0.5">'25</span>
           </h2>
-          <div className="inline-block w-16 h-px ml-2 bg-gradient-to-r from-yellow-500 to-transparent" />
+          <svg className="w-6 h-px ml-0 bg-gradient-to-r from-yellow-500 to-transparent" style={{ minWidth: '1.5rem' }} viewBox="0 0 24 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="0.5" width="24" height="1" rx="0.5" fill="url(#paint0_linear)" />
+            <defs>
+              <linearGradient id="paint0_linear" x1="0" y1="1" x2="24" y2="1" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#facc15" stopOpacity="1" />
+                <stop offset="1" stopColor="#facc15" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
 
-        <NavbarIcon isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
+        <div className="hidden">
+          <NavbarIcon isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
+        </div>
+        
+        {/* Mobile Current Page Button */}
+        <div
+          className={`sm:hidden cursor-pointer flex items-center space-x-1 text-xs xs:text-sm sm:text-base rounded-xl px-2 xs:px-3 py-1 sm:py-1.5 transition-all duration-75 ${isExpanded ? 'shadow-inner' : ''} ${(() => {
+            const active = links.find((l) => l.path === location.pathname);
+            return isExpanded && active ? 'bg-yellow-400/30 font-bold text-white' : 'text-slate-300 font-semibold';
+          })()} tracking-wide uppercase`}
+          onClick={() => setIsExpanded((prev) => !prev)}
+        >
+          <span>
+            {(() => {
+              const active = links.find(
+                (l) => l.path === location.pathname
+              );
+              return active ? active.name : "Menu";
+            })()}
+          </span>
+          <svg
+            className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+        
         <ul
           id="nav-list"
-          className={`w-screen sm:w-fit text-center text-sm md:text-base uppercase flex flex-col sm:flex-row sm:justify-end items-center transition-all duration-300 ease-in-out overflow-hidden ${isExpanded ? "opacity-100 max-h-[300px]" : "max-sm:opacity-0 max-sm:max-h-0 delay-300"}`}
+          className={`w-fit max-w-full text-center text-xs xs:text-sm md:text-base uppercase flex flex-col sm:flex-row items-center justify-center mx-auto transition-all duration-300 ease-in-out overflow-hidden ${isExpanded ? "opacity-100 max-h-[300px] mt-4" : "max-sm:opacity-0 max-sm:max-h-0 delay-300"}`}
         >
-          <div
-            className="sm:absolute top-0 bottom-0 sm:bg-yellow-400/25 backdrop-blur-sm transition-all duration-300 rounded-xl hidden sm:inline-block"
-            style={{ left: tabStyles.left, width: tabStyles.width }}
-          />
+
           {links.map((link, idx) => (
             <li
               key={idx}
-              className={`not-last:border-b not-last:border-white/10 max-sm:not-last:mb-1 max-sm:not-last:pb-0.5 max-sm:w-full sm:border-none transition-all duration-300 ${!isExpanded ? "max-sm:-translate-y-full max-sm:opacity-0" : "translate-0 opacity-100 "}`}
+              className={`not-last:border-b not-last:border-white/10 max-sm:not-last:mb-1 max-sm:not-last:pb-0.5 max-sm:w-full sm:border-none transition-all duration-300 ${!isExpanded ? "max-sm:-translate-y-4 max-sm:opacity-0" : "translate-y-0 opacity-100"}`}
               style={{
-                transitionTimingFunction:
-                  "transition-timing-function: cubic-bezier(0.750, -0.015, 0.565, 1.055)",
+                transitionTimingFunction: "cubic-bezier(0.750, -0.015, 0.565, 1.055)",
                 transitionDelay: `${idx * 0.055}s`,
               }}
             >
@@ -96,10 +109,12 @@ function Navbar() {
                 ref={(el) => (navlinksRef.current[idx] = el)}
                 id="navlink"
                 to={link.path}
-                onClick={() => handleActive(idx)}
+                onClick={() => setIsExpanded(false)}
                 className={({ isActive }) => [
-                  isActive ? "text-white " : " text-slate-300 hover:scale-105 ", //added space beacuse function joins the array using ,
-                  " relative px-3 md:px-4 rounded-xl sm:py-2 inline-block transition-all duration-75 ease-in-out",
+                  isActive
+                    ? "text-white font-bold bg-yellow-400/30 shadow-inner tab-active"
+                    : "text-slate-300 hover:scale-105",
+                  "relative px-1 xs:px-2 md:px-3 rounded-xl py-1 sm:py-1.5 inline-block transition-all duration-75 ease-in-out uppercase tracking-wide text-xs xs:text-sm md:text-base",
                 ]}
               >
                 {link.name}

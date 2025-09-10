@@ -12,8 +12,8 @@ export function meta({}) {
 
 export default function Home() {
   return (
-    <div>
-      <Hero />;
+    <div className="mt-[-2rem]">
+      <Hero />
     </div>
   );
 }
