@@ -90,6 +90,58 @@
   }
 }
 
+/* odd slices glitch left */
+.glitch-slice:nth-child(odd) {
+  animation: glitch-left 2s infinite linear;
+}
+
+/* even slices glitch right */
+.glitch-slice:nth-child(even) {
+  animation: glitch-right 2s infinite linear;
+}
+
+@keyframes glitch-left {
+  0.00%,
+  33.33%,
+  43.33%,
+  66.67%,
+  76.67%,
+  100.00% {
+    transform: none;
+  }
+
+  33.43%,
+  43.23% {
+    transform: translateX(-3px);
+  }
+
+  66.77%,
+  76.57% {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes glitch-right {
+  0.00%,
+  33.33%,
+  43.33%,
+  66.67%,
+  76.67%,
+  100.00% {
+    transform: none;
+  }
+
+  33.43%,
+  43.23% {
+    transform: translateX(3px);
+  }
+
+  66.77%,
+  76.57% {
+    transform: translateX(-3px);
+  }
+}
+
 .particle {
   position: absolute;
   pointer-events: none;

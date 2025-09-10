@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router";
 import NavbarIcon from "./NavbarIcon";
+import GlitchText from "./GlitchText";
 
 function Navbar() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -52,7 +53,7 @@ function Navbar() {
               className={`not-last:border-b not-last:border-white/10 max-sm:not-last:mb-1 max-sm:not-last:pb-0.5 max-sm:w-full sm:border-none transition-all duration-300 ${!isExpanded ? "max-sm:-translate-y-full max-sm:opacity-0" : "translate-0 opacity-100 "}`}
               style={{
                 transitionTimingFunction:
-                  "  transition-timing-function: cubic-bezier(0.750, -0.015, 0.565, 1.055)",
+                  "transition-timing-function: cubic-bezier(0.750, -0.015, 0.565, 1.055)",
                 transitionDelay: `${idx * 0.055}s`,
               }}
             >
@@ -60,12 +61,18 @@ function Navbar() {
                 data-text={link.name}
                 id="nav-link"
                 to={link.path}
-                className="px-1 hover:scale-105 inline-block transition-transform duration-75 ease-in-out"
-                style={({ isActive }) => {
-                  return { color: isActive && "#fff" };
-                }}
+                className="px-1 inline-block transition-transform duration-75 ease-in-out"
+                className={({ isActive }) =>
+                  isActive ? "text-white" : "hover:scale-105"
+                }
               >
-                {link.name}
+                {({ isActive }) =>
+                  isActive ? (
+                    <GlitchText text={link.name} slices={5} />
+                  ) : (
+                    link.name
+                  )
+                }
               </NavLink>
             </li>
           ))}
