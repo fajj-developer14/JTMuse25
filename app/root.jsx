@@ -50,8 +50,8 @@ export function Layout({ children }) {
           className="fixed inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url(/assets/images/bg.png)",
-            filter: "brightness(0.90) saturate(0.90)",
-            WebkitFilter: "brightness(0.90) saturate(0.90)",
+            filter: "brightness(0.90) saturate(0.87)",
+            WebkitFilter: "brightness(0.90) saturate(0.87)",
             zIndex: -1,
           }}
         ></div>
