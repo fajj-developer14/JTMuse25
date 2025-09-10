@@ -1,11 +1,11 @@
-function Contact() {
+function Contact({name,email,phone}) {
   return (
-    <div className="contact-section">
-      <h2 className="text-center text-xl font-bold mb-3">Contact Us</h2>
-      <p>
-        If you have any questions or inquiries, please feel free to reach out to us.
-      </p>
-    </div>
+        <div className="inline-block w-150 bg-white/20 backdrop-blur-xs border border-white/20 rounded-xl p-6 shadow-lg ml-20">
+            <p className="font-bold text-2xl mb-2">{name}</p>
+            <p><b>Email:</b> {email}</p>
+            <p><b>Phone:</b> {phone}</p>
+        </div>
+
   );
 }
 
