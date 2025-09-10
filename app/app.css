@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Muted background filter for bg image */
+.bg-muted {
+  filter: brightness(0.97) saturate(0.97);
+  -webkit-filter: brightness(0.97) saturate(0.97);
+}
+
 @media (min-width: 640px) {
   .tab-active {
     position: relative;
