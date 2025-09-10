@@ -1,5 +1,10 @@
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import About from "@/components/About";
+import Sponsors from "@/components/Sponsors";
+import Contact from "@/components/Contact";
+import Location from "@/components/Location";
+import Sites from "@/components/Sites";
 
 export function meta({}) {
   return [
@@ -13,9 +18,15 @@ export function meta({}) {
 
 export default function Home() {
   return (
-    <div>
+    <div className="mb-20">
       <Navbar />
-      <Hero />;
+      <Hero />
+      <About id="about" />
+      <Sponsors id="sponsors" />
+      <Contact id="contact" />
+      <Location id="location" />
+      <Sites id="sites" />
+
     </div>
   );
 }
