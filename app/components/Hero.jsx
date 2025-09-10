@@ -56,7 +56,7 @@ const Hero = () => {
             animation: "fadeInUp 1.2s ease-out 2.2s both",
           }}
         >
-          <h2 className="font-bold text-[#dfc797] text-4xl text-center mt-[2rem]">Coming Soon...</h2>
+          <h2 className="font-bold text-[#dfc797] text-4xl text-center mt-[2rem]">coming soon...</h2>
           {/*
           <Button
             text="REGISTER NOW"
