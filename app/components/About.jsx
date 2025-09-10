@@ -1,9 +1,11 @@
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
+
 
 
 function About() {
   return (
-    <div className="about-section mr-15 ml-15 px-10 bg-white/20 backdrop-blur-xs border border-white/20 rounded-xl p-6 shadow-lg">
+    <div className="about-section mr-15 ml-15 px-10 bg-white/20 backdrop-blur-xs border border-white/20 rounded-xl p-6 shadow-lg text-[#f3f2ee]">
       <h2 className="text-center text-4xl font-bold mb-3">What is JT Muse?</h2>
       <p>
          Muse is the second iteration of LGS JT's flagship arts event,

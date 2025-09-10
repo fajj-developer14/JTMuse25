@@ -23,7 +23,7 @@ export default function Home() {
       <Hero />
       <About id="about" />
       <Sponsors id="sponsors" />
-      <h2 className="text-center text-xl font-bold mb-3">Contact Us</h2>
+      <h2 className="text-center text-4xl font-bold mb-3 text-white">Contact Us</h2>
       <Contact name="Hassan Amiruddin Ansari" email="contact@example.com" phone="+92 314 4133798" />
       <Contact name="Abubakar Farukh" email="contact2@example.com" phone="+92 332 4637107" />
       <Location id="location" />
