@@ -47,11 +47,9 @@ export function Layout({ children }) {
       <body>
         {/* Global background layer */}
         <div
-          className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-muted"
           style={{
             backgroundImage: "url(/assets/images/bg.png)",
-            filter: "brightness(0.95) saturate(0.95)",
-            WebkitFilter: "brightness(0.95) saturate(0.95)",
             zIndex: -1,
           }}
         ></div>
