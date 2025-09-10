@@ -8,12 +8,16 @@ import {
 } from "react-router";
 
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import "./app.css";
 
 export function meta() {
   return [
     { title: "JT Muse'25" },
-    { name: "description", content: "The third edition of Lgs Jt's Premier Art Olympiad" },
+    {
+      name: "description",
+      content: "The third edition of Lgs Jt's Premier Art Olympiad",
+    },
   ];
 }
 
@@ -42,14 +46,15 @@ export function Layout({ children }) {
       </head>
       <body>
         {/* Global background layer */}
-        <div 
+        <div
           className="fixed inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/assets/images/bg.png)',
-            animation: 'breathe 6s ease-in-out infinite',
-            zIndex: -1
+            backgroundImage: "url(/assets/images/bg.png)",
+            animation: "breathe 6s ease-in-out infinite",
+            zIndex: -1,
           }}
         ></div>
+        <Navbar />
         {children}
         <Footer />
         <ScrollRestoration />
