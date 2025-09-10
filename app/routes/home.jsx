@@ -19,8 +19,8 @@ export function meta({}) {
 export default function Home() {
   return (
     <div className="mb-20">
-  {/* Navbar is hidden on mobile (shown md and up) */}
-  <div className="fade-in-up delay-0 hidden md:block"><Navbar /></div>
+  {/* Navbar removed on all devices */}
+  {/* <div className="fade-in-up delay-0 hidden md:block"><Navbar /></div> */}
       <div className="fade-in-up delay-100"><Hero /></div>
       {/* commented this for now will fix more later
       <div className="fade-in-up delay-200"><About id="about" /></div>
