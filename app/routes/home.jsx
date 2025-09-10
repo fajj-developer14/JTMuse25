@@ -1,4 +1,10 @@
 import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import About from "@/components/About";
+import Sponsors from "@/components/Sponsors";
+import Contact from "@/components/Contact";
+import Location from "@/components/Location";
+import Sites from "@/components/Sites";
 
 export function meta({}) {
   return [
@@ -12,8 +18,17 @@ export function meta({}) {
 
 export default function Home() {
   return (
-    <div className="mt-[-2rem]">
+    <div className="mb-20">
+      <Navbar />
       <Hero />
+      <About id="about" />
+      <Sponsors id="sponsors" />
+      <h2 className="text-center text-xl font-bold mb-3">Contact Us</h2>
+      <Contact name="Hassan Amiruddin Ansari" email="contact@example.com" phone="+92 314 4133798" />
+      <Contact name="Abubakar Farukh" email="contact2@example.com" phone="+92 332 4637107" />
+      <Location id="location" />
+      <Sites id="sites" />
+
     </div>
   );
 }
