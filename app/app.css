@@ -2,8 +2,8 @@
 
 /* Muted background filter for bg image */
 .bg-muted {
-  filter: brightness(0.97) saturate(0.97);
-  -webkit-filter: brightness(0.97) saturate(0.97);
+  filter: brightness(0.92) saturate(0.92);
+  -webkit-filter: brightness(0.92) saturate(0.92);
 }
 
 @media (min-width: 640px) {
