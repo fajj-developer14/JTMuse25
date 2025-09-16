@@ -1,3 +1,22 @@
+.hero-lines-wrap {
+  min-width: 0;
+}
+.hero-lines-text {
+  font-size: clamp(0.8rem, 4vw, 1.1rem);
+  line-height: 1.1;
+}
+@media (max-width: 640px) {
+  .hero-lines-wrap {
+    max-width: 98vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .hero-lines-text {
+    font-size: clamp(0.8rem, 5vw, 1.05rem);
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+  }
+}
 .font-nexa-bold {
   font-family: 'Nexa', Arial, sans-serif !important;
   font-weight: 700 !important;
@@ -353,9 +372,11 @@ body {
 .Headings{
 
   text-align: center;
-  font-size: 2.25rem;       /* Tailwind's text-4xl */
-  font-weight: 700;         /* Tailwind's font-bold */
-  margin-bottom: 0.75rem;   /* Tailwind's mb-3 */
+  font-size: 2.25rem;     
+  font-weight: 700;       
+  margin-bottom: 0.75rem;   
   color: #ffffff;
 
 }
+
+
