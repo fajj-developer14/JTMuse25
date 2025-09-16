@@ -12,8 +12,7 @@ const Hero = () => {
       <div className="particle particle-4"></div>
       <div className="particle particle-5"></div>
 
-      <div className="floating-accent floating-accent-1"></div>
-      <div className="floating-accent floating-accent-2"></div>
+
 
       <div className="shimmer-dot shimmer-dot-1"></div>
       <div className="shimmer-dot shimmer-dot-2"></div>
@@ -29,7 +28,7 @@ const Hero = () => {
           <img 
             src="/assets/images/top_line.png" 
             alt="Top Decorative Line" 
-            className="w-auto  h-auto mt-[-2rem] sm:mt-[-6rem] mx-auto"
+            className="top-line-img w-full max-w-[600px] h-auto mt-[-2rem] sm:mt-[-6rem] mx-auto"
           />
         </div>
 
@@ -56,7 +55,7 @@ const Hero = () => {
             animation: "fadeInUp 1.2s ease-out 2.2s both",
           }}
         >
-          <h2 className="font-bold text-[#dfc797] text-4xl text-center mt-[2rem]">coming soon...</h2>
+          <h2 className="font-bold text-[#dfc797] text-4xl text-center mt-[2rem] font-nexa-bold">coming soon...</h2>
           {/*
           <Button
             text="REGISTER NOW"

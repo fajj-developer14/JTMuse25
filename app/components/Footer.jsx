@@ -1,23 +1,20 @@
 const Footer = () => {
     return (
         <footer className="fixed bottom-0 left-0 right-0 z-30 bg-black/20 backdrop-blur-sm border-t border-white/10">
-            <div className="px-6 py-3">
+            <div className="px-4 py-2 sm:px-6 sm:py-3">
                 <div className="flex flex-col items-center text-center space-y-1">
-
-                    <div className="flex items-center space-x-2 text-xs text-white/70">
+                    <div className="flex items-center space-x-1 text-[10px] sm:text-xs footer-mobile-text font-nexa-bold text-[#dfc797]/70">
                         <span>Copyright © 2025 LGS JT</span>
                         <span className="text-white/40">⚬</span>
                         <span>All Rights Reserved</span>
                     </div>
-                    
-
-                    <div className="flex flex-wrap items-center justify-center space-x-2 text-xs text-white/60">
+                    <div className="flex flex-wrap items-center justify-center space-x-1 text-[10px] sm:text-xs text-[#dfc797]/60 footer-mobile-text font-nexa-bold ">
                         <span>Made By:</span>
                         <a 
-                            href="https://github.com/ARTariqDev" 
+                            href="https://github.com/Abdul-Wasiq-Khan" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="hover:text-white/90 transition-colors duration-200 text-white/50 focus:outline-none"
+                            className="hover:text-white/90 transition-colors duration-200 font-nexa-bold text-[#dfc797]/50 focus:outline-none"
                             style={{
                                 textDecoration: 'none',
                                 transition: 'box-shadow 0.2s',
@@ -25,14 +22,14 @@ const Footer = () => {
                             onMouseEnter={e => e.currentTarget.style.boxShadow = '0 0 8px 2px #FFD700'}
                             onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
                         >
-                            Abdur Rehman Tariq
+                            Abdul Wasiq Khan
                         </a>
                         <span className="text-white/30">⚬</span>
                         <a 
                             href="https://github.com/fajj-developer14" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="hover:text-white/90 transition-colors duration-200 text-white/50 focus:outline-none"
+                            className="hover:text-white/90 transition-colors duration-200 text-[#dfc797]/50 font-nexa-bold focus:outline-none"
                             style={{
                                 textDecoration: 'none',
                                 transition: 'box-shadow 0.2s',
@@ -44,10 +41,10 @@ const Footer = () => {
                         </a>
                         <span className="text-white/30">⚬</span>
                         <a 
-                            href="https://github.com/Abdul-Wasiq-Khan" 
+                            href="https://github.com/ARTariqDev" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="hover:text-white/90 transition-colors duration-200 text-white/50 focus:outline-none"
+                            className="hover:text-white/90 transition-colors duration-200 text-[#dfc797]/50 font-nexa-bold focus:outline-none"
                             style={{
                                 textDecoration: 'none',
                                 transition: 'box-shadow 0.2s',
@@ -55,7 +52,7 @@ const Footer = () => {
                             onMouseEnter={e => e.currentTarget.style.boxShadow = '0 0 8px 2px #FFD700'}
                             onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
                         >
-                            Abdul Wasiq Khan
+                            Abdur Rehman Tariq
                         </a>
                     </div>
                 </div>

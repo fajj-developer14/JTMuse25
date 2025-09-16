@@ -1,4 +1,51 @@
+.font-nexa-bold {
+  font-family: 'Nexa', Arial, sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.footer-mobile-text {
+  font-size: 10px;
+}
+
+@media (max-width: 640px) {
+  .footer-mobile-text {
+    font-size: 9px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  footer {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+  .footer-mobile-text {
+    font-size: 10px !important;
+  }
+}
+.bg-img-stable {  /* Ensures background image covers full viewport height consistently  cuz image kept resizing itself on mobile*/
+  min-height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+}
 @import "tailwindcss";
+
+.top-line-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 640px) {
+  .top-line-img {
+    max-width: 95vw;
+    margin-top: -1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
 
 /* Muted background filter for bg image */
 .bg-muted {

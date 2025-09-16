@@ -19,7 +19,7 @@ export function meta({}) {
 export default function Home() {
   return (
     <div className="mb-20">
-      <Navbar />
+      {/*<Navbar />*/}
       <Hero />{/*
       <About id="about" />
       <Sponsors id="sponsors" />

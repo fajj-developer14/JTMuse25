@@ -41,19 +41,37 @@ export function Layout({ children }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+        {/* Preload priority for background images and use webp for faster loading times*/}
+        <link rel="preload" as="image" href="/assets/images/bg.webp" imageSrcSet="/assets/images/bg.webp 1x, /assets/images/bg-mobile.png 800w" imageSizes="(max-width: 800px) 100vw, 100vw" type="image/webp" />
+        <link rel="preload" as="image" href="/assets/images/bg-mobile.png" imageSrcSet="/assets/images/bg-mobile.png 800w" imageSizes="(max-width: 800px) 100vw, 100vw" type="image/png" />
         <Meta />
         <Links />
       </head>
       <body>
-        {/* Global background layer */}
-        <div
-          className="fixed inset-0 bg-cover bg-center bg-no-repeat bg-muted"
-          style={{
-            backgroundImage: "url(/assets/images/bg.png)",
-            zIndex: -1,
-          }}
-        ></div>
-        <Navbar />
+        {/* Global background layer with responsive images */}
+        <picture>
+          <source
+            srcSet="/assets/images/bg.webp"
+            type="image/webp"
+            media="(min-width: 801px)"
+          />
+          <source
+            srcSet="/assets/images/bg-mobile.png"
+            type="image/png"
+            media="(max-width: 800px)"
+          />
+          <img
+            src="/assets/images/bg-mobile.png"
+            alt="Background"
+            className="fixed inset-0 w-full min-h-screen bg-img-stable object-cover object-center bg-muted -z-10 select-none pointer-events-none"
+            style={{ position: "fixed", inset: 0, zIndex: -1, height: '100dvh', minHeight: '100vh' }}
+            loading="eager"
+            fetchPriority="high"
+            draggable="false"
+            aria-hidden="true"
+          />
+        </picture>
+  {/* <Navbar /> */}
         {children}
         <Footer />
         <ScrollRestoration />
