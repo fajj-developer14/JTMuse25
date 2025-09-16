@@ -301,3 +301,14 @@ body {
 .delay-600 { animation-delay: 0.6s; }
 .delay-700 { animation-delay: 0.7s; }
 .delay-800 { animation-delay: 0.8s; }
+
+
+.Headings{
+
+  text-align: center;
+  font-size: 2.25rem;       /* Tailwind's text-4xl */
+  font-weight: 700;         /* Tailwind's font-bold */
+  margin-bottom: 0.75rem;   /* Tailwind's mb-3 */
+  color: #ffffff;
+
+}
