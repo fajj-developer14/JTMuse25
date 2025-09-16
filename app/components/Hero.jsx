@@ -4,7 +4,7 @@ import Button from "./Button";
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <main className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+    <main className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden hero-main-center"> {/*Adding overflow hidden here, Farjad please dont kill me, we can remove this if need be*/}  
       {/* Floating particles and other stuff */}
       <div className="particle particle-1"></div>
       <div className="particle particle-2"></div>
