@@ -20,10 +20,10 @@ export default function Home() {
   return (
     <div className="mb-20">
       {/*<Navbar />*/}
-      <Hero />{/*
+      <Hero />
       <About id="about" />
       <Sponsors id="sponsors" />
-      <Contact/>*/}
+      <Contact id="contact" />
       
 
     </div>

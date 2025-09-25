@@ -451,7 +451,10 @@ body {
   font-size: 2.25rem;     
   font-weight: 700;       
   margin-bottom: 0.75rem;   
-  color: #ffffff;
+  color: #ebb44c;
+  font-family: 'Nexa', Arial, sans-serif;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  text-transform: lowercase;
 
 }
 
