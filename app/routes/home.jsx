@@ -18,14 +18,18 @@ export function meta({}) {
 
 export default function Home() {
   return (
-    <div className="mb-20">
-      {/*<Navbar />*/}
-      <Hero />{/*
-      <About id="about" />
-      <Sponsors id="sponsors" />
-      <Contact/>*/}
-      
-
+    <div className="flex flex-col items-center w-full min-h-screen bg-transparent">
+      <section className="w-full max-w-5xl px-4">
+        <Hero />
+      </section>
+      <section >
+        <About id="about" />
+      </section>
+      {/*
+      <section className="w-full max-w-5xl px-4 mt-12">
+        <Sponsors id="sponsors" />
+      </section>
+      */}
     </div>
   );
 }

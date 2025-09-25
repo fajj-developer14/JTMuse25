@@ -1,26 +1,13 @@
 import { useEffect } from "react";
 const Footer = () => {
-    // Show footer on scroll up (mobile only)
+    // Always show footer on mobile
     useEffect(() => {
         if (typeof window === 'undefined' || window.innerWidth > 640) return;
-        let lastScroll = window.scrollY;
         const footer = document.querySelector('.footer-reveal-mobile');
-        const onScroll = () => {
-            if (!footer) return;
-            if (window.scrollY < lastScroll || window.scrollY < 10) {
-                footer.classList.add('show');
-            } else {
-                footer.classList.remove('show');
-            }
-            lastScroll = window.scrollY;
-        };
-        window.addEventListener('scroll', onScroll);
-        // Show on load if at top
-        if (footer && window.scrollY < 10) footer.classList.add('show');
-        return () => window.removeEventListener('scroll', onScroll);
+        if (footer) footer.classList.add('show');
     }, []);
     return (
-        <footer className="footer-reveal-mobile fixed bottom-0 left-0 right-0 z-30 bg-black/20 backdrop-blur-sm border-t border-white/10">
+    <footer className="footer-reveal-mobile show fixed inset-x-0 bottom-0 z-10 bg-black/20 backdrop-blur-sm border-t border-white/10 m-0 w-full h-auto pointer-events-auto">
             <div className="px-4 py-2 sm:px-6 sm:py-3">
                 <div className="flex flex-col items-center text-center space-y-1">
                     <div className="flex items-center space-x-1 text-[10px] sm:text-xs footer-mobile-text font-nexa-bold text-[#dfc797]/70">

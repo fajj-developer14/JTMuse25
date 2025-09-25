@@ -1,4 +1,18 @@
+@keyframes fadein-card {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fadein-card {
+  animation: fadein-card 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
 @import "tailwindcss";
+
+* {
+  font-family: 'Nexa', Arial, sans-serif;
+}
 
 .desktop-no-gap {
   gap: 0 !important;
@@ -446,13 +460,12 @@ body {
 
 
 .Headings{
-
+  font-family: 'Nexa', Arial, sans-serif;
   text-align: center;
   font-size: 2.25rem;     
   font-weight: 700;       
   margin-bottom: 0.75rem;   
-  color: #ffffff;
-
+  color: #f4c860;
 }
 
 

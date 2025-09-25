@@ -7,9 +7,11 @@ import {
   ScrollRestoration,
 } from "react-router";
 
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "./app.css";
+import { useLocation } from "react-router";
 
 export function meta() {
   return [
@@ -35,6 +37,8 @@ export const links = () => [
 ];
 
 export function Layout({ children }) {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   return (
     <html lang="en">
       <head>
@@ -71,9 +75,15 @@ export function Layout({ children }) {
             aria-hidden="true"
           />
         </picture>
-  {/* <Navbar /> */}
+        {!isHome && 
+        <nav>
+          <Navbar />
+        </nav>
+        }
         {children}
-        <Footer />
+        <section className="mt-15">
+          <Footer />
+        </section>
         <ScrollRestoration />
         <Scripts />
       </body>
