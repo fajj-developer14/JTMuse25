@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import Location from "./Location";
 
 export function Data({ category, president, vicePresident, index, inView }) {
   return (
     <div 
-      className={`bg-white/10 border border-[#dfc797]/20 rounded-2xl p-4 sm:p-6 shadow-lg transition-all duration-700 ease-out transform hover:scale-[1.03] hover:shadow-2xl hover:border-[#dfc797]/60 ${
+      className={`bg-white/10 border border-[#dfc797]/20  p-4 sm:p-6 shadow-lg transition-all duration-700 ease-out transform hover:scale-[1.03] hover:shadow-2xl hover:border-[#dfc797]/60 ${
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ 
@@ -114,6 +115,7 @@ const directors = [
   {  }
 ];
 
+
 function Contact() {
   const [inView, setInView] = useState(false);
   const contactRef = useRef(null);
@@ -134,9 +136,10 @@ function Contact() {
   }, []);
 
   return (
-    <div 
+    <div
+      id="contact"
       ref={contactRef}
-      className="relative min-h-screen w-full flex flex-col items-center justify-center py-16 px-4 sm:px-8 md:px-12 lg:px-20 overflow-x-hidden bg-gradient-to-br from-[#232323]/10 to-[#181818]/10 backdrop-blur border border-white/20 md:rounded-2xl shadow-2xl w-[97vw] mx-auto"
+      className="relative min-h-screen w-full flex flex-col items-center justify-center py-16 px-4 sm:px-8 md:px-12 lg:px-20 overflow-x-hidden bg-gradient-to-br from-[#232323]/10 to-[#181818]/10 backdrop-blur border border-white/20  shadow-2xl w-[97vw] mx-auto"
     >
       {/* Subtle artsy background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#232323]/40 to-[#181818]/40 backdrop-blur border border-white/20" />
@@ -210,22 +213,8 @@ function Contact() {
       {/* Registration Directors Section */}
      
        
-      {/* Location Text */}
-      <div 
-        className={`text-center transition-all duration-700 ease-out transform ${
-          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
-        style={{ 
-          transitionDelay: inView ? `${400 + ((contacts.length + directors.length) * 80) + 400}ms` : '0ms'
-        }}
-      >
-        <h2 className="text-lg font-semibold text-[#dfc797] mb-2" style={{fontFamily:'Montserrat, Inter, sans-serif'}}>
-          Location
-        </h2>
-        <p className="text-[#fff2d6] max-w-2xl mx-auto font-medium tracking-wide text-sm md:text-base" style={{fontFamily:'Inter, sans-serif'}}>
-          364-E/1, M. A. Block E 1 Phase 1 Johar Town, Lahore, Punjab 54700
-        </p>
-      </div>
+      <Location />
+      
     </div>
   );
 }

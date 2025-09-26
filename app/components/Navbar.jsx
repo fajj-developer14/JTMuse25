@@ -15,16 +15,27 @@ function Navbar() {
     { name: "info", path: "/#about" },
     { name: "categories", path: "/categories" },
     { name: "register", path: "/register" },
-    { name: "contact", path: "/contact" },
+    { name: "contact", path: "/#contact" },
   ];
 
   
+
   const handleInfoClick = (e) => {
     if (location.pathname === "/") {
       e.preventDefault();
       const aboutSection = document.getElementById("about");
       if (aboutSection) {
         aboutSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const handleContactClick = (e) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
@@ -154,7 +165,13 @@ function Navbar() {
                 <NavLink
                   data-text={link.name}
                   to={link.path}
-                  onClick={link.name === "info" ? handleInfoClick : undefined}
+                  onClick={
+                    link.name === "info"
+                      ? handleInfoClick
+                      : link.name === "contact"
+                        ? handleContactClick
+                        : undefined
+                  }
                   className={({ isActive }) => {
       
                     let active = isActive;

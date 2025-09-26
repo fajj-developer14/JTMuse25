@@ -24,7 +24,7 @@ function About() {
     <div
       id="about"
       ref={aboutRef}
-      className="about-section mt-15 pt-28 sm:pt-16 rounded-md relative lg:px-10 bg-gradient-to-br from-[#232323]/80 to-[#181818]/80 backdrop-blur border border-white/20 md:rounded-2xl p-6 shadow-2xl w-[97.5vw] mx-auto min-h-0"
+      className="about-section mt-15 pt-28 sm:pt-16  relative lg:px-10 bg-gradient-to-br from-[#232323]/80 to-[#181818]/80 backdrop-blur border border-white/20  p-6 shadow-2xl w-[99vw] mx-auto min-h-0 border-4 border-white/20 "
     >
       <div className="flex flex-col items-center text-center">
         <h2
