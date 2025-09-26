@@ -15,7 +15,7 @@ export function Data({ category, president, vicePresident, index, inView }) {
       </p>
       <div className="space-y-3">
         <div className="text-center">
-          <p className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1" style={{fontFamily:'Inter, sans-serif'}}>President</p>
+          <p className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1" style={{fontFamily:'Inter, sans-serif'}}>{(category!=="Registrations") ? "President" : "Director Registration"}</p>
           <p className="font-bold text-base sm:text-lg text-[#dfc797]" style={{fontFamily:'Montserrat, Inter, sans-serif'}}>{president.name}</p>
           <a 
             href={`tel:${president.phone.replace(/\s+/g, '')}`} 
@@ -26,7 +26,7 @@ export function Data({ category, president, vicePresident, index, inView }) {
           </a>
         </div>
         <div className="pt-2 border-t border-[#dfc797]/20 text-center">
-          <p className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1" style={{fontFamily:'Inter, sans-serif'}}>Vice President</p>
+          <p className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1" style={{fontFamily:'Inter, sans-serif'}}>{(category!=="Registrations") ? "Vice President" : "Director Registration"}</p>
           <p className="font-bold text-base sm:text-lg text-[#dfc797]" style={{fontFamily:'Montserrat, Inter, sans-serif'}}>{vicePresident.name}</p>
           <a 
             href={`tel:${vicePresident.phone.replace(/\s+/g, '')}`} 
@@ -96,12 +96,22 @@ const contacts = [
       name: "Musa Wattoo",
       phone: "+92 300 8807300"
     }
-  }
+  },
+  {
+    category: "Registrations",
+    president: {
+      name: "Arshman Shahjahan", 
+      phone: "+92 316 4931028"
+    },
+    vicePresident: {
+      name: "Ayaan Aquib",
+      phone: "+92 316 4846440"
+    }}
 ];
 
 const directors = [
-  { name: "Arshman Shahjahan", phone: "+92 316 4931028" },
-  { name: "Ayaan Aquib", phone: "+92 300 4846440" }
+  {  },
+  {  }
 ];
 
 function Contact() {
@@ -189,69 +199,17 @@ function Contact() {
               inView={inView}
             />
           ))}
+          <div>
+
+          </div>
         </div>
+        
+
       </section>
 
       {/* Registration Directors Section */}
-      <section className="w-full max-w-7xl mx-auto mb-12">
-        <h2 
-          className={`text-2xl sm:text-3xl font-bold text-[#dfc797] text-center mb-6 transition-all duration-700 ease-out transform ${
-            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-          style={{
-            fontFamily:'Montserrat, Inter, sans-serif',
-            transitionDelay: inView ? `${400 + (contacts.length * 80)}ms` : '0ms'
-          }}
-        >
-          Registration Directors
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {directors.map((director, index) => (
-            <div
-              key={index}
-              className={`bg-white/10 border border-[#dfc797]/20 rounded-2xl p-6 shadow-lg flex flex-col gap-2 items-center text-center transition-all duration-700 ease-out transform hover:scale-[1.03] hover:shadow-2xl hover:border-[#dfc797]/60 ${
-                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ 
-                transitionDelay: inView ? `${400 + ((contacts.length + index) * 80)}ms` : '0ms'
-              }}
-            >
-              <p className="font-extrabold text-lg text-[#dfc797] tracking-wide" style={{fontFamily:'Montserrat, Inter, sans-serif'}}>{director.name}</p>
-              <a 
-                href={`tel:${director.phone.replace(/\s+/g, '')}`} 
-                className="flex items-center justify-center gap-2 text-[#232323] bg-[#dfc797]/80 hover:bg-[#fff2d6] px-4 py-2 rounded-full font-bold shadow transition-colors duration-150 text-sm sm:text-base whitespace-nowrap"
-              >
-                <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path fill="#232323" d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"/></svg>
-                {director.phone}
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <div 
-        className={`flex justify-center my-12 w-full transition-all duration-700 ease-out transform ${
-          inView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
-        }`}
-        style={{ 
-          transitionDelay: inView ? `${400 + ((contacts.length + directors.length) * 80) + 200}ms` : '0ms'
-        }}
-      >
-        <div className="relative group w-full max-w-5xl">
-          <div className="absolute -inset-3 rounded-xl bg-gradient-to-r from-yellow-900/80 via-yellow-700/80 to-yellow-500/80 blur-lg opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
-          <div className="relative rounded-xl overflow-hidden border border-[#dfc797]/25 backdrop-blur-sm bg-black/30">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12602.049475408632!2d74.27454330050205!3d31.46684539008887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903e0fc887323%3A0xab96115d544c1796!2sLahore%20Grammar%20School%20for%20Boys%20(LGS%20JT)!5e1!3m2!1sen!2s!4v1725424124783!5m2!1sen!2s"
-              className="filter brightness-90 hover:brightness-100 transition duration-300 w-full h-[45vh]"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-
+     
+       
       {/* Location Text */}
       <div 
         className={`text-center transition-all duration-700 ease-out transform ${
