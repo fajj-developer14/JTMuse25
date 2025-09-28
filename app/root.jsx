@@ -66,6 +66,7 @@ export function Layout({ children }) {
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="JronmGLPXm-xuey1Fwzh8Ty4o2PELLwRHkAeCYv7HbU" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
