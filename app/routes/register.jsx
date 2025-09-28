@@ -7,8 +7,8 @@ export function meta() {
 
 function Register() {
   return (
-    <div className="min-h-[95vh] w-full bg-[#111827] flex justify-center items-center">
-      <div className="h-[100vh] w-[100vw] pb-15 pt-16 bg-white/40">
+    <div className="min-h-[84vh] w-full flex justify-center items-center py-[-4rem] bg-[#F2F2F2]">
+      <div className="h-[95vh] w-[100vw] pb-15 pt-16 ">
         <FilloutStandardEmbed
           filloutId="mGaKfZSAJVus"
           data-fillout-inherit-parameters

@@ -8,10 +8,12 @@ import {
 } from "react-router";
 
 
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "./app.css";
 import { useLocation } from "react-router";
+import { useEffect, useRef, useState } from "react";
 
 export function meta() {
   return [
@@ -36,9 +38,31 @@ export const links = () => [
   },
 ];
 
+
 export function Layout({ children }) {
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const [showStickyNavbar, setShowStickyNavbar] = useState(false);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    if (!isHome) {
+      setShowStickyNavbar(true);
+      return;
+    }
+    // Only observe on home page
+    const hero = document.getElementById("hero-section");
+    if (!hero) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setShowStickyNavbar(!entry.isIntersecting);
+      },
+      { threshold: 0.01 }
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, [isHome]);
+
   return (
     <html lang="en">
       <head>
@@ -75,11 +99,38 @@ export function Layout({ children }) {
             aria-hidden="true"
           />
         </picture>
-        {!isHome && 
-        <nav>
-          <Navbar />
-        </nav>
-        }
+        {/* Sticky Navbar that slides in after Hero */}
+        {isHome && (
+          <nav
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              width: '100vw',
+              maxWidth: '100vw',
+              margin: 0,
+              zIndex: 100,
+              transform: showStickyNavbar ? 'translateY(0)' : 'translateY(-120%)',
+              transition: 'transform 0.5s cubic-bezier(.77,0,.18,1)',
+              padding: 0,
+              boxSizing: 'border-box',
+              background: 'transparent',
+            }}
+          >
+            {showStickyNavbar && (
+              <div style={{width: '100vw', maxWidth: '100vw', margin: 0, padding: 0}}>
+                <Navbar forceFullWidth />
+              </div>
+            )}
+          </nav>
+        )}
+        {/* Normal Navbar for all other pages */}
+        {!isHome && (
+          <nav>
+            <Navbar />
+          </nav>
+        )}
         {children}
         <section >
           <Footer />
