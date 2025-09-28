@@ -4,6 +4,7 @@ import NavbarIcon from "./NavbarIcon";
 
 function Navbar({ forceFullWidth = false }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [showNavLinks, setShowNavLinks] = useState(false);
   const navbarRef = useRef(null);
   const [scrollActive, setScrollActive] = useState(null); // 'home' | 'info' | null
   const location = useLocation();
@@ -62,6 +63,17 @@ function Navbar({ forceFullWidth = false }) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // Control navlinks visibility for smooth collapse
+  useEffect(() => {
+    if (isExpanded) {
+      setShowNavLinks(true);
+    } else {
+      // Wait for background transition (300ms) before hiding navlinks
+      const timeout = setTimeout(() => setShowNavLinks(false), 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [isExpanded]);
 
   useEffect(() => {
     if (location.pathname === "/") {
@@ -146,17 +158,18 @@ function Navbar({ forceFullWidth = false }) {
         <ul
           id="nav-list"
           className={`w-full text-center text-sm md:text-base uppercase flex flex-col items-center sm:flex-row sm:justify-center transition-all duration-300 ease-in-out sm:transition-none overflow-visible font-bold
-            ${isExpanded ? "opacity-100 visible static pt-2" : "max-sm:opacity-0 max-sm:invisible max-sm:absolute max-sm:pt-0 sm:pt-0 sm:opacity-100 sm:visible sm:static"}`}
+            ${isExpanded && showNavLinks ? "opacity-100 visible static pt-2 pointer-events-auto" : (!isExpanded && showNavLinks ? "opacity-0 visible static pt-0 pointer-events-none" : "opacity-0 invisible absolute pt-0 pointer-events-none sm:pt-0 sm:opacity-100 sm:visible sm:static sm:pointer-events-auto")}`}
+          style={{transitionProperty: 'opacity, transform, visibility'}}
         >
             {links.map((link, idx) => (
               <li
                 key={idx}
                 className={`w-full sm:w-auto mb-1 sm:mb-0 transition-all duration-300 ${
-                  isExpanded ? 'opacity-100 transform translate-y-0 visible' : 'max-sm:opacity-0 max-sm:transform max-sm:-translate-y-2 max-sm:invisible sm:opacity-100 sm:transform sm:translate-y-0 sm:visible'
+                  isExpanded ? 'opacity-100 transform translate-y-0 visible' : 'opacity-0 transform -translate-y-2 invisible sm:opacity-100 sm:transform sm:translate-y-0 sm:visible'
                 }`}
                 style={{
                   transitionTimingFunction: "cubic-bezier(0.750, -0.015, 0.565, 1.055)",
-                  transitionDelay: isExpanded ? `${idx * 0.055}s` : '0s',
+                  transitionDelay: isExpanded ? `${idx * 0.055}s` : '0.2s',
                 }}
               >
                 <NavLink
