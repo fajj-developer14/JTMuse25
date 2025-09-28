@@ -18,8 +18,6 @@ function Navbar({ forceFullWidth = false }) {
     { name: "contact", path: "/#contact" },
   ];
 
-  
-
   const handleInfoClick = (e) => {
     if (location.pathname === "/") {
       e.preventDefault();
@@ -40,12 +38,11 @@ function Navbar({ forceFullWidth = false }) {
     }
   };
 
-
   useEffect(() => {
     if (location.pathname === "/") {
       setScrollActive("home");
     }
-  }, []);  // Run only on mount
+  }, []); // Run only on mount
 
   useEffect(() => {
     const handleClick = (e) => {
@@ -67,7 +64,6 @@ function Navbar({ forceFullWidth = false }) {
   }, []);
 
   useEffect(() => {
-
     if (location.pathname === "/") {
       const hero = document.getElementById("hero-section");
       const about = document.getElementById("about");
@@ -76,8 +72,10 @@ function Navbar({ forceFullWidth = false }) {
       const observer = new window.IntersectionObserver(
         (entries) => {
           // Sort entries by intersection ratio to prioritize the most visible section
-          const sortedEntries = entries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-          
+          const sortedEntries = entries.sort(
+            (a, b) => b.intersectionRatio - a.intersectionRatio
+          );
+
           for (const entry of sortedEntries) {
             if (entry.isIntersecting) {
               if (entry.target.id === "about") {
@@ -92,7 +90,7 @@ function Navbar({ forceFullWidth = false }) {
         },
         {
           threshold: [0, 0.1, 0.5, 1],
-          rootMargin: "-10% 0px -10% 0px"
+          rootMargin: "-10% 0px -10% 0px",
         }
       );
       observer.observe(hero);
@@ -101,13 +99,11 @@ function Navbar({ forceFullWidth = false }) {
         observer.disconnect();
       };
     } else {
-
       setScrollActive(null);
     }
   }, [location]);
 
   useEffect(() => {
-
     if (location.pathname !== "/") {
       setScrollActive(null);
     }
@@ -146,7 +142,7 @@ function Navbar({ forceFullWidth = false }) {
             }
           />
         </div>
-        
+
         <ul
           id="nav-list"
           className={`w-full text-center text-sm md:text-base uppercase flex flex-col items-center sm:flex-row sm:justify-center transition-all duration-300 ease-in-out sm:transition-none overflow-visible font-bold
