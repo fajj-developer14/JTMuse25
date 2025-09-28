@@ -8,6 +8,7 @@
     "start": "react-router-serve ./build/server/index.js"
   },
   "dependencies": {
+    "@fillout/react": "^0.0.7",
     "@react-router/node": "^7.7.1",
     "@react-router/serve": "^7.7.1",
     "isbot": "^5.1.27",

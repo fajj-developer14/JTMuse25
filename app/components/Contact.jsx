@@ -4,7 +4,7 @@ import Location from "./Location";
 export function Data({ category, president, vicePresident, index, inView }) {
   return (
     <div 
-      className={`bg-white/10 border border-[#dfc797]/20  p-4 sm:p-6 shadow-lg transition-all duration-700 ease-out transform hover:scale-[1.03] hover:shadow-2xl hover:border-[#dfc797]/60 ${
+      className={`bg-white/10 border border-[#dfc797]/20 rounded-2xl p-4 sm:p-6 shadow-lg transition-all duration-700 ease-out transform hover:scale-[1.03] hover:shadow-2xl hover:border-[#dfc797]/60 ${
         inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ 
@@ -206,45 +206,8 @@ function Contact() {
 
       </section>
 
-      {/* Registration Directors Section */}
-                <div 
-        className={`flex justify-center my-12 w-full transition-all duration-700 ease-out transform ${
-          inView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
-        }`}
-        style={{ 
-          transitionDelay: inView ? `${400 + ((contacts.length) * 80) + 200}ms` : '0ms'
-        }}
-      >
-        <div className="relative group w-full max-w-5xl">
-          <div className="absolute -inset-3 rounded-xl bg-gradient-to-r from-yellow-900/80 via-yellow-700/80 to-yellow-500/80 blur-lg opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
-          <div className="relative rounded-xl overflow-hidden border border-[#dfc797]/25 backdrop-blur-sm bg-black/30">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12602.049475408632!2d74.27454330050205!3d31.46684539008887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903e0fc887323%3A0xab96115d544c1796!2sLahore%20Grammar%20School%20for%20Boys%20(LGS%20JT)!5e1!3m2!1sen!2s!4v1725424124783!5m2!1sen!2s"
-              className="filter brightness-90 hover:brightness-100 transition duration-300 w-full h-[45vh]"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-       
-      {/* Location Text */}
-      <div 
-        className={`text-center transition-all duration-700 ease-out transform ${
-          inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
-        style={{ 
-          transitionDelay: inView ? `${400 + ((contacts.length) * 80) + 400}ms` : '0ms'
-        }}
-      >
-        <h2 className="text-lg font-semibold text-[#dfc797] mb-2" style={{fontFamily:'Montserrat, Inter, sans-serif'}}>
-          Location
-        </h2>
-        <p className="text-[#fff2d6] max-w-2xl mx-auto font-medium tracking-wide text-sm md:text-base" style={{fontFamily:'Inter, sans-serif'}}>
-          364-E/1, M. A. Block E 1 Phase 1 Johar Town, Lahore, Punjab 54700
-        </p>
-      </div>
+      {/*Pasing props here for transitions*/}
+      <Location contacts={contacts} directors={[]} />
     </div>
   );
 }

@@ -7,10 +7,10 @@ const Footer = () => {
         if (footer) footer.classList.add('show');
     }, []);
     return (
-    <footer className="footer-reveal-mobile show fixed inset-x-0 bottom-0 z-10 bg-black/20 backdrop-blur-sm border-t border-white/10 m-0 w-full h-auto pointer-events-auto">
+    <footer className="footer-reveal-mobile show fixed inset-x-0 bottom-0 z-10 bg-black/20 backdrop-blur-sm border-t border-white/10 m-0 w-full h-auto pointer-events-auto ">
             <div className="px-4 py-2 sm:px-6 sm:py-3">
                 <div className="flex flex-col items-center text-center space-y-1">
-                    <div className="flex items-center space-x-1 text-[10px] sm:text-xs footer-mobile-text font-nexa-bold text-[#dfc797]/70">
+                    <div className="flex items-center space-x-1 text-[10px] sm:text-xs footer-mobile-text font-nexa-bold text-[#dfc797]/90">
                         <span>Copyright © 2025 LGS JT</span>
                         <span className="text-white/40">⚬</span>
                         <span>All Rights Reserved</span>

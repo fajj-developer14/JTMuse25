@@ -81,7 +81,7 @@ export function Layout({ children }) {
         </nav>
         }
         {children}
-        <section className="mt-15">
+        <section >
           <Footer />
         </section>
         <ScrollRestoration />
