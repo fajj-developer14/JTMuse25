@@ -125,10 +125,12 @@ function Navbar({ forceFullWidth = false }) {
   return (
     <nav
       ref={navbarRef}
-      className={
-  `${forceFullWidth || !isHome ? "fixed top-0 left-0 right-0 w-[100vw] max-w-none" : "fixed top-0 left-1/2 -translate-x-1/2 w-[90vw] sm:w-fit"} px-4 sm:px-8 py-3 z-50 border-b border-white/10 text-slate-50 bg-black/10 rounded-xl min-w-[220px] ${isExpanded ? 'pb-3' : ''}`
+      className={`${forceFullWidth || !isHome ? "fixed top-0 left-0 right-0 w-[100vw] max-w-none" : "fixed top-0 left-1/2 -translate-x-1/2 w-[90vw] sm:w-fit"} px-4 sm:px-8 py-3 z-50 border-b border-white/10 text-slate-50 bg-black/10 rounded-xl min-w-[220px] ${isExpanded ? "pb-3" : ""}`}
+      style={
+        forceFullWidth
+          ? { margin: 0, padding: "1rem", width: "100vw", maxWidth: "100vw" }
+          : {}
       }
-      style={forceFullWidth ? {margin: 0, padding: '1rem', width: '100vw', maxWidth: '100vw'} : {}}
     >
       <div className="absolute inset-0 bg-black/20 backdrop-blur-sm z-40 rounded-xl" />
 
@@ -158,52 +160,60 @@ function Navbar({ forceFullWidth = false }) {
         <ul
           id="nav-list"
           className={`w-full text-center text-sm md:text-base uppercase flex flex-col items-center sm:flex-row sm:justify-center transition-all duration-300 ease-in-out sm:transition-none overflow-visible font-bold
-            ${isExpanded && showNavLinks ? "opacity-100 visible static pt-2 pointer-events-auto" : (!isExpanded && showNavLinks ? "opacity-0 visible static pt-0 pointer-events-none" : "opacity-0 invisible absolute pt-0 pointer-events-none sm:pt-0 sm:opacity-100 sm:visible sm:static sm:pointer-events-auto")}`}
-          style={{transitionProperty: 'opacity, transform, visibility'}}
+            ${isExpanded && showNavLinks ? "opacity-100 visible static pt-2 pointer-events-auto" : !isExpanded && showNavLinks ? "opacity-0 visible static pt-0 pointer-events-none" : "opacity-0 invisible absolute pt-0 pointer-events-none sm:pt-0 sm:opacity-100 sm:visible sm:static sm:pointer-events-auto"}`}
+          style={{ transitionProperty: "opacity, transform, visibility" }}
         >
-            {links.map((link, idx) => (
-              <li
-                key={idx}
-                className={`w-full sm:w-auto mb-1 sm:mb-0 transition-all duration-300 ${
-                  isExpanded ? 'opacity-100 transform translate-y-0 visible' : 'opacity-0 transform -translate-y-2 invisible sm:opacity-100 sm:transform sm:translate-y-0 sm:visible'
-                }`}
-                style={{
-                  transitionTimingFunction: "cubic-bezier(0.750, -0.015, 0.565, 1.055)",
-                  transitionDelay: isExpanded ? `${idx * 0.055}s` : '0.2s',
+          {links.map((link, idx) => (
+            <li
+              key={idx}
+              className={`w-full sm:w-auto mb-1 sm:mb-0 transition-all duration-300 ${
+                isExpanded
+                  ? "opacity-100 transform translate-y-0 visible"
+                  : "opacity-0 transform -translate-y-2 invisible sm:opacity-100 sm:transform sm:translate-y-0 sm:visible"
+              }`}
+              style={{
+                transitionTimingFunction:
+                  "cubic-bezier(0.750, -0.015, 0.565, 1.055)",
+                transitionDelay: isExpanded ? `${idx * 0.055}s` : "0.2s",
+              }}
+            >
+              <NavLink
+                data-text={link.name}
+                to={link.path}
+                onClick={
+                  link.name === "info"
+                    ? handleInfoClick
+                    : link.name === "contact"
+                      ? handleContactClick
+                      : undefined
+                }
+                className={({ isActive }) => {
+                  let active = isActive;
+                  if (location.pathname === "/") {
+                    if (link.name === "home" && scrollActive === "home")
+                      active = true;
+                    else if (link.name === "info" && scrollActive === "info")
+                      active = true;
+                    else if (link.name === "home" && scrollActive === "info")
+                      active = false;
+                    else if (link.name === "info" && scrollActive === "home")
+                      active = false;
+                    else active = false;
+                  }
+
+                  const baseClasses =
+                    "relative px-3 py-1 md:px-4 rounded-xl sm:py-2 inline-block block w-full sm:w-auto text-center font-bold uppercase transition-all duration-300 ease-out transform";
+                  const activeClasses = "text-white scale-105";
+                  const inactiveClasses =
+                    "text-slate-300 hover:text-white hover:bg-white/10 hover:scale-105";
+                  return `${baseClasses} ${active ? activeClasses : inactiveClasses}`;
                 }}
               >
-                <NavLink
-                  data-text={link.name}
-                  to={link.path}
-                  onClick={
-                    link.name === "info"
-                      ? handleInfoClick
-                      : link.name === "contact"
-                        ? handleContactClick
-                        : undefined
-                  }
-                  className={({ isActive }) => {
-      
-                    let active = isActive;
-                    if (location.pathname === "/") {
-                      if (link.name === "home" && scrollActive === "home") active = true;
-                      else if (link.name === "info" && scrollActive === "info") active = true;
-                      else if (link.name === "home" && scrollActive === "info") active = false;
-                      else if (link.name === "info" && scrollActive === "home") active = false;
-                      else active = false; 
-                    }
-                    
-                    const baseClasses = "relative px-3 py-1 md:px-4 rounded-xl sm:py-2 inline-block block w-full sm:w-auto text-center font-bold uppercase transition-all duration-300 ease-out transform";
-                    const activeClasses = "text-white scale-105";
-                    const inactiveClasses = "text-slate-300 hover:text-white hover:bg-white/10 hover:scale-105";
-                    return `${baseClasses} ${active ? activeClasses : inactiveClasses}`;
-                  }}
-                >
-                  {link.name}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+                {link.name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
