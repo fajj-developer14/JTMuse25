@@ -16,7 +16,7 @@ function Navbar({ forceFullWidth = false }) {
     { name: "info", path: "/#about" },
     { name: "categories", path: "/" },
     { name: "register", path: "/register" },
-    { name: "contact", path: "/#contact" },
+    { name: "contact", path: "/contact" },
   ];
 
   const handleInfoClick = (e) => {
@@ -183,9 +183,9 @@ function Navbar({ forceFullWidth = false }) {
                 onClick={
                   link.name === "info"
                     ? handleInfoClick
-                    : link.name === "contact"
-                      ? handleContactClick
-                      : undefined
+                    : // : link.name === "contact"
+                      //   ? handleContactClick
+                      undefined
                 }
                 className={({ isActive }) => {
                   let active = isActive;
@@ -202,7 +202,7 @@ function Navbar({ forceFullWidth = false }) {
                   }
 
                   const baseClasses =
-                    "relative px-3 py-1 md:px-4 rounded-xl sm:py-2 inline-block block w-full sm:w-auto text-center font-bold uppercase transition-all duration-300 ease-out transform";
+                    "relative px-3 py-1 md:px-4 rounded-xl sm:py-2 inline-block w-full sm:w-auto text-center font-bold uppercase transition-all duration-300 ease-out transform";
                   const activeClasses = "text-white scale-105";
                   const inactiveClasses =
                     "text-slate-300 hover:text-white hover:bg-white/10 hover:scale-105";

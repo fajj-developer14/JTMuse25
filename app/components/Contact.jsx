@@ -3,37 +3,74 @@ import Location from "./Location";
 
 export function Data({ category, president, vicePresident, index, inView }) {
   return (
-    <div 
+    <div
       className={`bg-white/10 border border-[#dfc797]/20 rounded-2xl p-4 sm:p-6 shadow-lg transition-all duration-700 ease-out transform hover:scale-[1.03] hover:shadow-2xl hover:border-[#dfc797]/60 ${
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
-      style={{ 
-        transitionDelay: inView ? `${400 + (index * 80)}ms` : '0ms'
+      style={{
+        transitionDelay: inView ? `${400 + index * 80}ms` : "0ms",
       }}
     >
-      <p className="font-extrabold text-xl sm:text-2xl mb-3 text-[#dfc797] tracking-wide text-center" style={{fontFamily:'Montserrat, Inter, sans-serif'}}>
+      <p
+        className="font-extrabold text-xl sm:text-2xl mb-3 text-[#dfc797] tracking-wide text-center"
+        style={{ fontFamily: "Montserrat, Inter, sans-serif" }}
+      >
         {category}
       </p>
       <div className="space-y-3">
         <div className="text-center">
-          <p className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1" style={{fontFamily:'Inter, sans-serif'}}>{(category!=="Registrations") ? "President" : "Director Registration"}</p>
-          <p className="font-bold text-base sm:text-lg text-[#dfc797]" style={{fontFamily:'Montserrat, Inter, sans-serif'}}>{president.name}</p>
-          <a 
-            href={`tel:${president.phone.replace(/\s+/g, '')}`} 
+          <p
+            className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1"
+            style={{ fontFamily: "Inter, sans-serif" }}
+          >
+            {category !== "Registrations"
+              ? "President"
+              : "Director Registration"}
+          </p>
+          <p
+            className="font-bold text-base sm:text-lg text-[#dfc797]"
+            style={{ fontFamily: "Montserrat, Inter, sans-serif" }}
+          >
+            {president.name}
+          </p>
+          <a
+            href={`tel:${president.phone.replace(/\s+/g, "")}`}
             className="inline-flex items-center justify-center gap-2 text-[#232323] bg-[#dfc797]/80 hover:bg-[#fff2d6] px-4 py-2 rounded-full font-bold shadow transition-colors duration-150 text-sm mt-2"
           >
-            <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path fill="#232323" d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"/></svg>
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+              <path
+                fill="#232323"
+                d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"
+              />
+            </svg>
             {president.phone}
           </a>
         </div>
         <div className="pt-2 border-t border-[#dfc797]/20 text-center">
-          <p className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1" style={{fontFamily:'Inter, sans-serif'}}>{(category!=="Registrations") ? "Vice President" : "Director Registration"}</p>
-          <p className="font-bold text-base sm:text-lg text-[#dfc797]" style={{fontFamily:'Montserrat, Inter, sans-serif'}}>{vicePresident.name}</p>
-          <a 
-            href={`tel:${vicePresident.phone.replace(/\s+/g, '')}`} 
+          <p
+            className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1"
+            style={{ fontFamily: "Inter, sans-serif" }}
+          >
+            {category !== "Registrations"
+              ? "Vice President"
+              : "Director Registration"}
+          </p>
+          <p
+            className="font-bold text-base sm:text-lg text-[#dfc797]"
+            style={{ fontFamily: "Montserrat, Inter, sans-serif" }}
+          >
+            {vicePresident.name}
+          </p>
+          <a
+            href={`tel:${vicePresident.phone.replace(/\s+/g, "")}`}
             className="inline-flex items-center justify-center gap-2 text-[#232323] bg-[#dfc797]/80 hover:bg-[#fff2d6] px-4 py-2 rounded-full font-bold shadow transition-colors duration-150 text-sm mt-2"
           >
-            <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path fill="#232323" d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"/></svg>
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+              <path
+                fill="#232323"
+                d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"
+              />
+            </svg>
             {vicePresident.phone}
           </a>
         </div>
@@ -47,70 +84,69 @@ const contacts = [
     category: "Arts",
     president: {
       name: "Hassan Amiruddin Ansari",
-      phone: "+92 314 4133798"
+      phone: "+92 314 4133798",
     },
     vicePresident: {
       name: "Omer Khawar",
-      phone: "+92 335 4768007"
-    }
+      phone: "+92 335 4768007",
+    },
   },
   {
     category: "Media",
     president: {
       name: "Abubakar Farrukh",
-      phone: "+92 332 4637107"
+      phone: "+92 332 4637107",
     },
     vicePresident: {
       name: "Dawood Adeel",
-      phone: "+92 334 3111974"
-    }
+      phone: "+92 334 3111974",
+    },
   },
   {
     category: "Literary",
     president: {
       name: "Ahmad Hassan Sohail",
-      phone: "+92 332 4538321"
+      phone: "+92 332 4538321",
     },
     vicePresident: {
       name: "Muhammad bin Nauman",
-      phone: "+92 336 7355649"
-    }
+      phone: "+92 336 7355649",
+    },
   },
   {
     category: "Music",
     president: {
       name: "Ibrahim Aftab Qureshi",
-      phone: "+92 300 0988725"
+      phone: "+92 300 0988725",
     },
     vicePresident: {
       name: "Sheikh Saaram",
-      phone: "+92 335 0457575"
-    }
+      phone: "+92 335 0457575",
+    },
   },
   {
     category: "Dramatics",
     president: {
       name: "Ayan Habib",
-      phone: "+92 307 7817442"
+      phone: "+92 307 7817442",
     },
     vicePresident: {
       name: "Musa Wattoo",
-      phone: "+92 300 8807300"
-    }
+      phone: "+92 300 8807300",
+    },
   },
   {
     category: "Registrations",
     president: {
-      name: "Arshman Shahjahan", 
-      phone: "+92 316 4931028"
+      name: "Arshman Shahjahan",
+      phone: "+92 316 4931028",
     },
     vicePresident: {
       name: "Ayaan Aquib",
-      phone: "+92 316 4846440"
-    }}
+      phone: "+92 316 4846440",
+    },
+  },
 ];
-
-
 
 function Contact() {
   const [inView, setInView] = useState(false);
@@ -135,52 +171,86 @@ function Contact() {
     <div
       id="contact"
       ref={contactRef}
-      className="relative min-h-screen w-full flex flex-col items-center justify-center py-16 px-4 sm:px-8 md:px-12 lg:px-20 overflow-x-hidden bg-gradient-to-br from-[#232323]/10 to-[#181818]/10 backdrop-blur border border-white/20  shadow-2xl w-[97vw] mx-auto"
+      className="relative min-h-screen flex flex-col items-center justify-center py-16 px-4 sm:px-8 md:px-12 lg:px-20 overflow-x-hidden bg-gradient-to-br from-[#232323]/10 to-[#181818]/10 backdrop-blur border border-white/20  shadow-2xl mx-auto"
     >
       {/* Subtle artsy background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#232323]/40 to-[#181818]/40 backdrop-blur border border-white/20" />
 
       {/* Section Heading */}
       <section className="w-full max-w-7xl mx-auto flex flex-col items-center mb-10">
-        <h1 
+        <h1
           className={`text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-[#dfc797] via-[#fff2d6] to-[#dfc797] bg-clip-text text-transparent mb-2 drop-shadow-lg tracking-tight text-center transition-all duration-700 ease-out transform ${
-            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           style={{
-            fontFamily:'Montserrat, Inter, sans-serif',
-            transitionDelay: inView ? '100ms' : '0ms'
+            fontFamily: "Montserrat, Inter, sans-serif",
+            transitionDelay: inView ? "100ms" : "0ms",
           }}
         >
           Contact Us
         </h1>
-        <p 
+        <p
           className={`text-[#fff2d6] text-center max-w-2xl mb-6 font-medium text-base sm:text-lg transition-all duration-700 ease-out transform ${
-            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           style={{
-            fontFamily:'Inter, sans-serif',
-            transitionDelay: inView ? '200ms' : '0ms'
+            fontFamily: "Inter, sans-serif",
+            transitionDelay: inView ? "200ms" : "0ms",
           }}
         >
-          Reach out to our Arts Council for any queries or assistance. Tap a number to call directly.
+          Reach out to our Arts Council for any queries or assistance. Tap a
+          number to call directly.
         </p>
-        <div 
+        <div
           className={`flex flex-row justify-center items-center gap-6 px-8 py-3 rounded-2xl shadow-xl bg-white/20 backdrop-blur-md border border-[#dfc797]/20 mb-8 transition-all duration-700 ease-out transform ${
-            inView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
+            inView
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-8 scale-95"
           }`}
           style={{
-            boxShadow:'0 8px 32px 0 rgba(31,38,135,0.12)',
-            transitionDelay: inView ? '300ms' : '0ms'
+            boxShadow: "0 8px 32px 0 rgba(31,38,135,0.12)",
+            transitionDelay: inView ? "300ms" : "0ms",
           }}
         >
-          <a href="https://lgsjtmuse.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#dfc797] transition-colors" aria-label="Website">
-            <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><path fill="#dfc797" d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Zm2 0v12h12V6H6Zm2 2h8v2H8V8Zm0 4h8v2H8v-2Zm0 4h5v2H8v-2Z"/></svg>
+          <a
+            href="https://lgsjtmuse.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#dfc797] transition-colors"
+            aria-label="Website"
+          >
+            <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+              <path
+                fill="#dfc797"
+                d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Zm2 0v12h12V6H6Zm2 2h8v2H8V8Zm0 4h8v2H8v-2Zm0 4h5v2H8v-2Z"
+              />
+            </svg>
           </a>
-          <a href="mailto:lgsjtmuse@gmail.com" className="hover:text-[#dfc797] transition-colors" aria-label="Email">
-            <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><path fill="#dfc797" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 20v-9.99l7.99 7.99c.39.39 1.02.39 1.41 0L20 10.01V20H4Z"/></svg>
+          <a
+            href="mailto:lgsjtmuse@gmail.com"
+            className="hover:text-[#dfc797] transition-colors"
+            aria-label="Email"
+          >
+            <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+              <path
+                fill="#dfc797"
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 20v-9.99l7.99 7.99c.39.39 1.02.39 1.41 0L20 10.01V20H4Z"
+              />
+            </svg>
           </a>
-          <a href="https://instagram.com/lgsjt.muse" target="_blank" rel="noopener noreferrer" className="hover:text-[#dfc797] transition-colors" aria-label="Instagram">
-            <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><path fill="#dfc797" d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5ZM12 7.25A4.75 4.75 0 1 1 7.25 12 4.75 4.75 0 0 1 12 7.25Zm0 1.5A3.25 3.25 0 1 0 15.25 12 3.25 3.25 0 0 0 12 8.75Zm5.25-2.5a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/></svg>
+          <a
+            href="https://instagram.com/lgsjt.muse"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#dfc797] transition-colors"
+            aria-label="Instagram"
+          >
+            <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
+              <path
+                fill="#dfc797"
+                d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5ZM12 7.25A4.75 4.75 0 1 1 7.25 12 4.75 4.75 0 0 1 12 7.25Zm0 1.5A3.25 3.25 0 1 0 15.25 12 3.25 3.25 0 0 0 12 8.75Zm5.25-2.5a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"
+              />
+            </svg>
           </a>
         </div>
       </section>
@@ -198,12 +268,8 @@ function Contact() {
               inView={inView}
             />
           ))}
-          <div>
-
-          </div>
+          <div></div>
         </div>
-        
-
       </section>
 
       {/*Pasing props here for transitions*/}

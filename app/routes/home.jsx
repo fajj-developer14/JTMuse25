@@ -4,8 +4,6 @@ import About from "@/components/About";
 import Sponsors from "@/components/Sponsors";
 import Contact from "@/components/Contact";
 
-
-
 export function meta({}) {
   return [
     { title: "JT Muse'25" },
@@ -22,7 +20,7 @@ export default function Home() {
       <section className="w-full max-w-5xl px-4">
         <Hero />
       </section>
-      <section >
+      <section>
         <About id="about" />
       </section>
       {/*
@@ -30,7 +28,6 @@ export default function Home() {
         <Sponsors id="sponsors" />
       </section>
       */}
-      <Contact id="contact" />
     </div>
   );
 }

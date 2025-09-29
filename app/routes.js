@@ -5,4 +5,5 @@ export default [
   route("/info", "routes/info.jsx"),
   route("/categories", "routes/categories.jsx"),
   route("/register", "routes/register.jsx"),
+  route("/contact", "routes/contact.jsx"),
 ];
