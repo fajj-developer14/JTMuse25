@@ -7,8 +7,6 @@ import {
   ScrollRestoration,
 } from "react-router";
 
-
-
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "./app.css";
@@ -38,7 +36,6 @@ export const links = () => [
   },
 ];
 
-
 export function Layout({ children }) {
   const location = useLocation();
   const isHome = location.pathname === "/";
@@ -66,13 +63,30 @@ export function Layout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="JronmGLPXm-xuey1Fwzh8Ty4o2PELLwRHkAeCYv7HbU" />
+        <meta
+          name="google-site-verification"
+          content="JronmGLPXm-xuey1Fwzh8Ty4o2PELLwRHkAeCYv7HbU"
+        />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
         {/* Preload priority for background images and use webp for faster loading times*/}
-        <link rel="preload" as="image" href="/assets/images/bg.webp" imageSrcSet="/assets/images/bg.webp 1x, /assets/images/bg-mobile.png 800w" imageSizes="(max-width: 800px) 100vw, 100vw" type="image/webp" />
-        <link rel="preload" as="image" href="/assets/images/bg-mobile.png" imageSrcSet="/assets/images/bg-mobile.png 800w" imageSizes="(max-width: 800px) 100vw, 100vw" type="image/png" />
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/images/bg.webp"
+          imageSrcSet="/assets/images/bg.webp 1x, /assets/images/bg-mobile.png 800w"
+          imageSizes="(max-width: 800px) 100vw, 100vw"
+          type="image/webp"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/images/bg-mobile.png"
+          imageSrcSet="/assets/images/bg-mobile.png 800w"
+          imageSizes="(max-width: 800px) 100vw, 100vw"
+          type="image/png"
+        />
         <Meta />
         <Links />
       </head>
@@ -93,7 +107,13 @@ export function Layout({ children }) {
             src="/assets/images/bg-mobile.png"
             alt="Background"
             className="fixed inset-0 w-full min-h-screen bg-img-stable object-cover object-center bg-muted -z-10 select-none pointer-events-none"
-            style={{ position: "fixed", inset: 0, zIndex: -1, height: '100dvh', minHeight: '100vh' }}
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: -1,
+              height: "100dvh",
+              minHeight: "100vh",
+            }}
             loading="eager"
             fetchPriority="high"
             draggable="false"
@@ -104,23 +124,32 @@ export function Layout({ children }) {
         {isHome && (
           <nav
             style={{
-              position: 'fixed',
+              position: "fixed",
               top: 0,
               left: 0,
               right: 0,
-              width: '100vw',
-              maxWidth: '100vw',
+              width: "100vw",
+              maxWidth: "100vw",
               margin: 0,
               zIndex: 100,
-              transform: showStickyNavbar ? 'translateY(0)' : 'translateY(-120%)',
-              transition: 'transform 0.5s cubic-bezier(.77,0,.18,1)',
+              transform: showStickyNavbar
+                ? "translateY(0)"
+                : "translateY(-120%)",
+              transition: "transform 0.5s cubic-bezier(.77,0,.18,1)",
               padding: 0,
-              boxSizing: 'border-box',
-              background: 'transparent',
+              boxSizing: "border-box",
+              background: "transparent",
             }}
           >
             {showStickyNavbar && (
-              <div style={{width: '100vw', maxWidth: '100vw', margin: 0, padding: 0}}>
+              <div
+                style={{
+                  width: "100vw",
+                  maxWidth: "100vw",
+                  margin: 0,
+                  padding: 0,
+                }}
+              >
                 <Navbar forceFullWidth />
               </div>
             )}
@@ -133,7 +162,7 @@ export function Layout({ children }) {
           </nav>
         )}
         {children}
-        <section >
+        <section>
           <Footer />
         </section>
         <ScrollRestoration />

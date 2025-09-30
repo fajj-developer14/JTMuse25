@@ -14,7 +14,7 @@ function Navbar({ forceFullWidth = false }) {
   const links = [
     { name: "home", path: "/" },
     { name: "info", path: "/#about" },
-    { name: "categories", path: "/" },
+    { name: "categories", path: "/categories" },
     { name: "register", path: "/register" },
     { name: "contact", path: "/contact" },
   ];

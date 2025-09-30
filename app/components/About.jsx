@@ -10,7 +10,7 @@ function About() {
       ([entry]) => {
         setInView(entry.isIntersecting);
       },
-      { threshold: 0.2 }
+      { threshold: [0.1, 1] }
     );
     if (aboutRef.current) {
       observer.observe(aboutRef.current);
@@ -24,7 +24,7 @@ function About() {
     <div
       id="about"
       ref={aboutRef}
-      className="about-section mt-15 py-28 sm:py-16  relative lg:px-10 bg-gradient-to-br from-[#232323]/80 to-[#181818]/80 backdrop-blur border border-white/20  p-6 shadow-2xl mx-auto min-h-0  "
+      className="about-section mt-15 py-17 sm:py-16  relative lg:px-10 bg-gradient-to-br from-[#232323]/80 to-[#181818]/80 backdrop-blur border border-white/20  p-6 shadow-2xl mx-auto min-h-0  "
     >
       <div className="flex flex-col items-center text-center">
         <h2

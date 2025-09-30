@@ -37,7 +37,7 @@ const Hero = () => {
           >
             <div className="flex items-center justify-center w-full max-w-4xl mx-auto my-4 px-2 hero-lines-wrap">
               {/* Left line */}
-              <div className="flex-1 min-w-[8vw] h-[2.5px] sm:h-[4px] bg-gradient-to-r from-transparent to-[#dfc797]"></div>
+              <div className="flex-1 min-w-[8vw] h-[2.5px] sm:h-[4px] bg-gradient-to-r from-transparent to-[#dfc797] max-[380px]:hidden"></div>
 
               {/* Text */}
               <span className="mx-1 text-[.01rem] text-[#dfc797] font-extrabold uppercase tracking-[0.01em] text-[clamp(0.8rem,4vw,1.1rem)] sm:text-base whitespace-nowrap hero-lines-text">
@@ -45,7 +45,7 @@ const Hero = () => {
               </span>
 
               {/* Right line */}
-              <div className="flex-1 min-w-[10vw] h-[2.5px] sm:h-[4px] bg-gradient-to-l from-transparent to-[#dfc797]" />
+              <div className="flex-1 min-w-[10vw] h-[2.5px] sm:h-[4px] bg-gradient-to-l from-transparent to-[#dfc797] max-[380px]:hidden" />
             </div>
           </div>
 
