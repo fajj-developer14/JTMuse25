@@ -18,7 +18,7 @@ export function meta() {
     { title: "JT Muse'25" },
     {
       name: "description",
-      content: "The third edition of Lgs Jt's Premier Art Olympiad",
+      content: "The official website for the third edition of LGS JT's premier arts olympiad.",
     },
   ];
 }

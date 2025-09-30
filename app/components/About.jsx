@@ -44,12 +44,12 @@ function About() {
           style={{ transitionDelay: inView ? "200ms" : "0ms" }}
         />
         <div
-          className={`flex flex-col gap-2 w-full max-w-3xl mx-auto transition-all duration-700 ease-out transform ${
+          className={`flex flex-col gap-2 w-full max-w-3xl mx-auto transition-all duration-700 ease-out transform font-nexa-regular ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           style={{ transitionDelay: inView ? "300ms" : "0ms" }}
         >
-          <p className="text-[#f7f6f4] leading-relaxed text-lg sm:text-xl px-2 sm:px-8">
+          <p className="text-[#f7f6f4] leading-relaxed text-lg sm:text-xl px-2 sm:px-8 text-justify">
             Muse is the third iteration of{" "}
             <span className="font-bold text-[#dfc797]">LGS JT's</span> flagship
             arts event, ready to reclaim its throne as one of the most thrilling
@@ -74,7 +74,7 @@ function About() {
           style={{ transitionDelay: inView ? "400ms" : "0ms" }}
         >
           <Button
-            className="px-8 py-3 text-lg font-bold rounded-full shadow-md hover:scale-105 transition-transform duration-200"
+            className="px-8 py-5 text-lg rounded-full shadow-md hover:scale-105 transition-transform duration-200"
             text="Categories"
             color="rgba(255, 183, 83, 0.527)"
             glowColor="rgba(0, 0, 0, 0.5)"
@@ -90,7 +90,7 @@ function About() {
             <h3 className="text-xl font-bold text-[#dfc797] mb-2">
               Muse x Empresario
             </h3>
-            <p className="text-[#f7f6f4] text-base sm:text-lg">
+            <p className="text-[#f7f6f4] text-base sm:text-lg text-justify font-nexa-regular">
               This year, like the previous one, Muse and Empresario, two of JT's
               most awaited events, are being held together. Though they will
               have different registrations and will operate as separate
@@ -104,7 +104,7 @@ function About() {
             <h3 className="text-xl font-bold text-[#dfc797] mb-2">
               Muse + Artography
             </h3>
-            <p className="text-[#f7f6f4] text-base sm:text-lg">
+            <p className="text-[#f7f6f4] text-base sm:text-lg text-justify font-nexa-regular">
               JT Artography, hosted since 2016, has had a long-standing legacy.
               We at Muse are proud to carry forward this torch as it burns
               ever-brighter into the future. With categories that truly embrace

@@ -192,12 +192,26 @@
   --font-nexa: "Nexa", Arial, sans-serif;
 }
 
+
 @font-face {
   font-family: "Nexa";
   src: url("/assets/fonts/Nexa-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-family: "Nexa";
+  src: url("/assets/fonts/Nexa-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-nexa-regular {
+  font-family: 'Nexa',!important;
+  font-weight: 400 !important;
 }
 
 
