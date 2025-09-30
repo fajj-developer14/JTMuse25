@@ -43,7 +43,7 @@ const CountDown = () => {
       <div className="text-center">
         <div
           className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#dfc797] tabular-nums"
-          style={{ fontFamily: "NexaBold, Arial, sans-serif" }}
+          style={{ fontFamily: "Nexa, Arial, sans-serif" }}
         >
           {String(timeLeft.days).padStart(2, "0")}
         </div>
@@ -58,7 +58,7 @@ const CountDown = () => {
       <div className="text-center">
         <div
           className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#dfc797] tabular-nums"
-          style={{ fontFamily: "NexaBold, Arial, sans-serif" }}
+          style={{ fontFamily: "Nexa, Arial, sans-serif" }}
         >
           {String(timeLeft.hours).padStart(2, "0")}
         </div>
@@ -73,7 +73,7 @@ const CountDown = () => {
       <div className="text-center">
         <div
           className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#dfc797] tabular-nums"
-          style={{ fontFamily: "NexaBold, Arial, sans-serif" }}
+          style={{ fontFamily: "Nexa, Arial, sans-serif" }}
         >
           {String(timeLeft.minutes).padStart(2, "0")}
         </div>
@@ -88,7 +88,7 @@ const CountDown = () => {
       <div className="text-center">
         <div
           className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#dfc797] tabular-nums"
-          style={{ fontFamily: "NexaBold, Arial, sans-serif" }}
+          style={{ fontFamily: "Nexa, Arial, sans-serif" }}
         >
           {String(timeLeft.seconds).padStart(2, "0")}
         </div>

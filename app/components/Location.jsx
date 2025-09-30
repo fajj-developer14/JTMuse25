@@ -1,7 +1,6 @@
-
 import { useEffect, useRef, useState } from "react";
 
-const Location = ({ contacts = [], directors = [] }) => {
+const Location = ({ contacts = [], directors = [], headingColor }) => {
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
 
@@ -10,7 +9,7 @@ const Location = ({ contacts = [], directors = [] }) => {
       ([entry]) => {
         setInView(entry.isIntersecting);
       },
-      { threshold: 0.2 }
+      { threshold: [0.2, 1] }
     );
     if (ref.current) {
       observer.observe(ref.current);
@@ -23,22 +22,25 @@ const Location = ({ contacts = [], directors = [] }) => {
   return (
     <section
       ref={ref}
-      className={`w-full max-w-3xl mx-auto my-12 px-4 sm:px-8 md:px-12 text-center transition-all duration-700 ease-out transform ${
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      className={`w-full max-w-3xl mx-auto mt-12 px-4 sm:px-8 md:px-12 text-center transition-all duration-700 ease-out transform ${
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{
-        transitionDelay: inView
-          ? '300ms'
-          : '0ms',
+        transitionDelay: inView ? "300ms" : "0ms",
       }}
     >
       <h2
         className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#dfc797] via-[#fff2d6] to-[#dfc797] bg-clip-text text-transparent mb-2 drop-shadow-lg tracking-tight"
-        style={{ fontFamily: 'Montserrat, Inter, sans-serif' }}
+        style={{
+          fontFamily: "Montserrat, Inter, sans-serif",
+          color: headingColor,
+        }}
       >
         Location
       </h2>
-      <div className="w-16 h-1 bg-gradient-to-r from-[#dfc797] via-[#fff2d6] to-[#dfc797] rounded-full mb-4 mx-auto" />
+      <div
+        className={`w-16 h-1 bg-gradient-to-r from-[#dfc797] via-[#fff2d6] to-[#dfc797] rounded-full mb-4 mx-auto transition-all duration-700 delay-200 ease-in-out ${inView ? "scale-x-100 opacity-100 translate-y-0" : "scale-x-0 opacity-0 translate-y-4"}`}
+      />
       <div className="flex justify-center mb-6 animate-[fadeIn_2s_ease-in-out]">
         <div className="relative group w-full max-w-2xl mx-auto">
           <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-[#dfc797]/30 via-[#fff2d6]/20 to-[#dfc797]/30 blur-lg opacity-70 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
@@ -56,10 +58,10 @@ const Location = ({ contacts = [], directors = [] }) => {
           </div>
           <p
             className="text-[#fff2d6] max-w-2xl mx-auto font-medium tracking-wide text-base sm:text-lg my-8"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            style={{ fontFamily: "Inter, sans-serif" }}
           >
-        364-E/1, M. A. Block E 1 Phase 1 Johar Town, Lahore, Punjab 54700
-      </p>
+            364-E/1, M. A. Block E 1 Phase 1 Johar Town, Lahore, Punjab 54700
+          </p>
         </div>
       </div>
     </section>

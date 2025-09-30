@@ -40,7 +40,7 @@ const Hero = () => {
               <div className="flex-1 min-w-[8vw] h-[2.5px] sm:h-[4px] bg-gradient-to-r from-transparent to-[#dfc797] max-[380px]:hidden"></div>
 
               {/* Text */}
-              <span className="mx-1 text-[.01rem] text-[#dfc797] font-extrabold uppercase tracking-[0.01em] text-[clamp(0.8rem,4vw,1.1rem)] sm:text-base whitespace-nowrap hero-lines-text">
+              <span className="mx-1 text-[#dfc797] font-extrabold uppercase tracking-[0.01em] text-[clamp(0.8rem,4vw,1.1rem)] sm:text-base whitespace-nowrap hero-lines-text">
                 THE JT ARTS COUNCIL PRESENTS
               </span>
 
@@ -51,7 +51,7 @@ const Hero = () => {
 
           {/* Logo */}
           <div
-            className="relative z-10 flex items-center justify-center w-full -translate-y-5 sm:-translate-y-7"
+            className="relative z-10 flex items-center justify-center w-full -translate-y-10 "
             style={{
               animation: "fadeIn 1s ease-out 1.2s both",
             }}
@@ -59,7 +59,7 @@ const Hero = () => {
             <img
               src="/assets/images/logo.png"
               alt="Logo"
-              className="max-h-[40vh] sm:max-h-[60vh] w-auto object-contain"
+              className="max-h-[40vh] sm:max-h-[400px] sm:h-[60vh] w-auto object-contain"
               style={{
                 animation: "paintReveal 2.5s ease-in-out 1.5s both",
               }}
