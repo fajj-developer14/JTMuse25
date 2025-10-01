@@ -6,6 +6,7 @@ import Contact from "@/components/Contact";
 import contacts from "@/ContactInfo";
 import Data from "@/components/Data";
 import Location from "@/components/Location";
+import Categories from "@/components/Categories";
 import { useState, useEffect, useRef } from "react";
 
 const regiInfo = contacts.find((item) => item.category === "Registrations");
@@ -46,8 +47,11 @@ export default function Home() {
       </section>
       <section>
         <About id="about" />
-        {/* registratons */}
-        <div className="bg-gradient-to-br from-[#232323]/80 to-[#181818]/80 backdrop-blur py-15 sm:py-14 px-6 lg:px-10">
+      </section>
+
+      {/* registratons */}
+      <section className="w-full">
+        <div className="bg-gradient-to-br from-[#232323]/80 to-[#181818]/80 backdrop-blur pt-15 pb-10 sm:pt-14 px-6 lg:px-10">
           <div ref={contactRef} className="mx-auto">
             <h2
               className={`Headings text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#dfc797] via-[#fff2d6] to-[#dfc797] bg-clip-text text-transparent mb-2 drop-shadow-lg transition-all duration-700 ease-out transform ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
@@ -59,8 +63,8 @@ export default function Home() {
             ></div>
 
             <div>
-              {/* card 1 */}
-              <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mt-8 justify-center mb-15">
+              <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mt-8 justify-center mb-15 w-full">
+                {/* card 1 */}
                 <div
                   className={`bg-white/10 border border-[#dfc797]/20 rounded-2xl flex-1 p-4 sm:p-6 shadow-lg ease-out transform hover:scale-[1.03] hover:border-[#dfc797]/60 text-center transition-all duration-700 ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}
                 >
@@ -105,10 +109,10 @@ export default function Home() {
                     className="font-bold text-base sm:text-lg text-[#dfc797]"
                     style={{ fontFamily: "Montserrat, Inter, sans-serif" }}
                   >
-                    {regiInfo.president.name}
+                    {regiInfo.vicePresident.name}
                   </div>
                   <a
-                    href={`tel:${regiInfo.president.phone}`}
+                    href={`tel:${regiInfo.vicePresident.phone}`}
                     className="inline-flex items-center justify-center gap-2 text-[#232323] bg-[#dfc797]/80 hover:bg-[#fff2d6] px-4 py-2 rounded-full font-bold shadow transition-colors duration-150 text-sm mt-2"
                   >
                     <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
@@ -117,7 +121,7 @@ export default function Home() {
                         d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"
                       />
                     </svg>
-                    <div>{regiInfo.president.phone}</div>
+                    <div>{regiInfo.vicePresident.phone}</div>
                   </a>
                 </div>
               </div>
@@ -126,6 +130,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="w-full">
+        <Categories id="categories" />
       </section>
       {/*
       <section className="w-full max-w-5xl px-4 mt-12">
