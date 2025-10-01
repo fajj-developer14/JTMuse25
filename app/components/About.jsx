@@ -74,7 +74,7 @@ function About() {
           style={{ transitionDelay: inView ? "400ms" : "0ms" }}
         >
           <Button
-            className="px-8 py-5 text-lg rounded-full shadow-md hover:scale-105 transition-transform duration-200"
+            className="px-8 py-5 text-lg rounded-full shadow-xl drop-shadow-lg hover:scale-105 transition-transform duration-200"
             text="Categories"
             color="rgba(255, 183, 83, 0.527)"
             glowColor="rgba(0, 0, 0, 0.5)"

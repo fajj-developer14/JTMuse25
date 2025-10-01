@@ -132,7 +132,7 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full">
-        <Categories id="categories" />
+        <Categories id="Categories" /> {/* Updated id to "Categories"  since the navbar was scrolling to #Categories and not #categories*/}
       </section>
       {/*
       <section className="w-full max-w-5xl px-4 mt-12">

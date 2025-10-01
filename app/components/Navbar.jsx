@@ -19,12 +19,23 @@ function Navbar({ forceFullWidth = false }) {
     { name: "contact", path: "/contact" },
   ];
 
+
   const handleInfoClick = (e) => {
     if (location.pathname === "/") {
       e.preventDefault();
       const aboutSection = document.getElementById("about");
       if (aboutSection) {
         aboutSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const handleCategoriesClick = (e) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      const categoriesSection = document.getElementById("categories");
+      if (categoriesSection) {
+        categoriesSection.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
@@ -185,9 +196,9 @@ function Navbar({ forceFullWidth = false }) {
                 onClick={
                   link.name === "info"
                     ? handleInfoClick
-                    : // : link.name === "contact"
-                      //   ? handleContactClick
-                      undefined
+                    : link.name === "categories"
+                      ? handleCategoriesClick
+                      : undefined
                 }
                 className={({ isActive }) => {
                   let active = isActive;
