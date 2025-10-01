@@ -49,6 +49,10 @@ export default function Home() {
         <About id="about" />
       </section>
 
+      <section className="w-full">
+        <Categories id="Categories" /> {/* Updated id to "Categories"  since the navbar was scrolling to #Categories and not #categories*/}
+      </section>
+
       {/* registratons */}
       <section className="w-full">
         <div className="bg-gradient-to-br from-[#232323]/80 to-[#181818]/80 backdrop-blur pt-15 pb-10 sm:pt-14 px-6 lg:px-10">
@@ -130,9 +134,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="w-full">
-        <Categories id="Categories" /> {/* Updated id to "Categories"  since the navbar was scrolling to #Categories and not #categories*/}
       </section>
       {/*
       <section className="w-full max-w-5xl px-4 mt-12">

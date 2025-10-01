@@ -42,7 +42,7 @@ function subCategory({ params }) {
   return (
     <article
       ref={categoryRef}
-      className="py-10 min-h-[100dvh]  bg-gradient-to-br from-[#232323]/10 to-[#181818]/10 backdrop-blur border border-white/20 shadow-2xl"
+      className="py-10 min-h-[100dvh]  bg-gradient-to-br from-[#232323]/10 to-[#181818]/10 backdrop-blur border border-white/20 shadow-2xl "
     >
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#232323]/40 to-[#181818]/40 backdrop-blur border border-white/20" />
 
@@ -55,15 +55,22 @@ function subCategory({ params }) {
       >
         {Category}
       </h1>
-      <div className="text-center flex flex-col flex-wrap sm:justify-center sm:items-center gap-x-6 mt-10 sm:flex-row">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12 px-2 sm:px-0 justify-center items-center">
         {subCategories.map((subCat, index) => (
           <a
             target="_blank"
             href={subCat.path}
-            className="inline-block sm:w-[40vw] min-w-fit m-4 p-4 bg-white/10 border border-[#dfc797]/20 rounded-2xl text-[#fff2d6] font-medium md:text-lg shadow-lg hover:scale-[1.02] hover:border-[#dfc797]/60 transition-all duration-300"
             key={index}
+            className="group relative flex flex-col items-center justify-center p-6 min-h-[120px] sm:min-h-[140px] max-w-[380px] w-full mx-auto rounded-2xl bg-gradient-to-br from-[#232323]/60 to-[#181818]/60 border border-[#dfc797]/30 shadow-xl hover:shadow-2xl hover:border-[#dfc797]/60 transition-all duration-300 ease-in-out overflow-hidden backdrop-blur-md"
+            style={{}}
           >
-            {subCat.name}
+            <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition duration-300 rounded-2xl z-0" />
+            <span className="relative z-10 text-[#dfc797] font-nexa-regular text-xl sm:text-2xl font-bold drop-shadow-lg mb-2 text-center tracking-wide">
+              {subCat.name}
+            </span>
+            <span className="relative z-10 text-[#fff2d6] text-base sm:text-lg font-medium text-center mt-1">
+              {subCat.description || "Click to view details"}
+            </span>
           </a>
         ))}
       </div>

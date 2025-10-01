@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Button from "./Button";
+
 
 function About() {
   const [inView, setInView] = useState(false);
@@ -66,19 +66,6 @@ function About() {
             experience for students to realise the true extent of their
             passions.
           </p>
-        </div>
-        <div
-          className={`flex justify-center mt-4 transition-all duration-700 ease-out transform ${
-            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          style={{ transitionDelay: inView ? "400ms" : "0ms" }}
-        >
-          <Button
-            className="px-8 py-5 text-lg rounded-full shadow-xl drop-shadow-lg hover:scale-105 transition-transform duration-200"
-            text="Categories"
-            color="rgba(255, 183, 83, 0.527)"
-            glowColor="rgba(0, 0, 0, 0.5)"
-          />
         </div>
         <div
           className={`w-full flex flex-col sm:flex-row gap-6 mt-10 transition-all duration-700 ease-out transform ${
