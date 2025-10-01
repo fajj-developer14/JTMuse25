@@ -18,7 +18,8 @@ export function meta() {
     { title: "JT Muse'25" },
     {
       name: "description",
-      content: "The official website for the third edition of LGS JT's premier arts olympiad.",
+      content:
+        "The official website for the third edition of LGS JT's premier arts olympiad.",
     },
   ];
 }
@@ -90,7 +91,7 @@ export function Layout({ children }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="overflow-x-hidden">
         {/* Global background layer with responsive images */}
         <picture>
           <source

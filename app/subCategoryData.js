@@ -17,6 +17,7 @@ const data = [
       },
       { name: "Comp_2.prproj", path: "/assets/pdf/Media/Comp_2_prproj.pdf" },
       { name: "Gartic Phone", path: "/assets/pdf/Media/Gartic.pdf" },
+      { name: "TPDK", path: "/assets/pdf/Media/TPDK.pdf" },
     ],
   },
   {

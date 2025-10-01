@@ -152,7 +152,9 @@ function Navbar({ forceFullWidth = false }) {
             label={
               location.pathname === "/"
                 ? "home"
-                : location.pathname.replace("/", "")
+                : location.pathname.includes("/category/")
+                  ? location.pathname.replace("/category/", " ")
+                  : location.pathname.replace("/", " ")
             }
           />
         </div>

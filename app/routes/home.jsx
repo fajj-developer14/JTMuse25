@@ -41,7 +41,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center w-full min-h-screen bg-transparent">
+    <div className="flex flex-col items-center w-full min-h-screen bg-transparent overflow-x-hidden">
       <section className="w-full max-w-5xl px-4">
         <Hero />
       </section>
