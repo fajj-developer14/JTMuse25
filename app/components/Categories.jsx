@@ -1,12 +1,15 @@
 import CategoriesBtn from "./CategoriesBtn";
 import { useState, useEffect, useRef } from "react";
 const btnDetails = [
-  { href: "", imgSrc: "/assets/categories/ArtsIcon.webp" },
-  { href: "", imgSrc: "/assets/categories/MusicIcon.webp" },
-  { href: "", imgSrc: "/assets/categories/MiscIcon.webp" },
-  { href: "", imgSrc: "/assets/categories/LitIcon.webp" },
-  { href: "", imgSrc: "/assets/categories/MediaIcon.webp" },
-  { href: "", imgSrc: "/assets/categories/DramaIcon.webp" },
+  { href: "/category/Arts", imgSrc: "/assets/categories/ArtsIcon.webp" },
+  { href: "/category/Music", imgSrc: "/assets/categories/MusicIcon.webp" },
+  {
+    href: "/category/Miscellaneous",
+    imgSrc: "/assets/categories/MiscIcon.webp",
+  },
+  { href: "/category/Literature", imgSrc: "/assets/categories/LitIcon.webp" },
+  { href: "/category/Media", imgSrc: "/assets/categories/MediaIcon.webp" },
+  { href: "/category/Drama", imgSrc: "/assets/categories/DramaIcon.webp" },
 ];
 
 function Categories() {
@@ -41,7 +44,7 @@ function Categories() {
         className={`w-16 h-1 bg-gradient-to-r from-[#dfc797] via-[#fff2d6] to-[#dfc797] rounded-full mb-4 mx-auto transition-all duration-700 delay-200 ease-in-out ${inView ? "scale-x-100 opacity-100 translate-y-0" : "scale-x-0 opacity-0 translate-y-4"}`}
       ></div>
       <div
-        className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 my-15 justify-center items-center justify-items-center mx-auto max-w-7xl ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10 sm:gap-8 my-15 justify-center items-center justify-items-center mx-auto max-w-7xl  transition-all duration-1000 delay-200 ease-in-out ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         {btnDetails.map((btn, index) => (
           <CategoriesBtn key={index} href={btn.href} imgSrc={btn.imgSrc} />
