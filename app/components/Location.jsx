@@ -41,7 +41,7 @@ const Location = ({ contacts = [], directors = [], headingColor }) => {
       <div
         className={`w-16 h-1 bg-gradient-to-r from-[#dfc797] via-[#fff2d6] to-[#dfc797] rounded-full mb-4 mx-auto transition-all duration-700 delay-200 ease-in-out ${inView ? "scale-x-100 opacity-100 translate-y-0" : "scale-x-0 opacity-0 translate-y-4"}`}
       />
-      <div className="flex justify-center mb-6 animate-[fadeIn_2s_ease-in-out]">
+      <div className="flex justify-center mb-6 mt-8 animate-[fadeIn_2s_ease-in-out]">
         <div className="relative group w-full max-w-2xl mx-auto">
           <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-[#dfc797]/30 via-[#fff2d6]/20 to-[#dfc797]/30 blur-lg opacity-70 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
           <div className="relative rounded-2xl overflow-hidden border border-[#dfc797]/30 backdrop-blur-md bg-black/40 shadow-xl">
