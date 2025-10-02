@@ -80,7 +80,7 @@ const Button = ({
         />
       ))}
 
-      <span className="relative z-20 text-lg uppercase tracking-widest">
+      <span className="relative z-20 text-lg uppercase tracking-widest font-nexa-regular">
         {text}
       </span>
     </button>

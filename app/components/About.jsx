@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Button from './Button';
 
 function About() {
   const [inView, setInView] = useState(false);
@@ -65,6 +66,19 @@ function About() {
             experience for students to realise the true extent of their
             passions.
           </p>
+        </div>
+        <div
+          className={`w-full flex justify-center mt-6 transition-all duration-700 ease-out ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          style={{ transitionDelay: inView ? "400ms" : "0ms" }}
+        >
+          <a href="/assets/pdf/invite.pdf" target="_blank" rel="noopener noreferrer">
+            <Button
+              text="View Event Invite"
+              color="#dfc797"
+              textColor="#232323"
+              glowColor="#fff2d6"
+            />
+          </a>
         </div>
         <div
           className={`w-full flex flex-col sm:flex-row gap-6 mt-10 transition-all duration-700 ease-out transform ${
