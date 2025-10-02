@@ -30,9 +30,9 @@ const Location = ({ contacts = [], directors = [], headingColor }) => {
       }}
     >
       <h2
-        className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#dfc797] via-[#fff2d6] to-[#dfc797] bg-clip-text text-transparent mb-2 drop-shadow-lg tracking-tight"
+        className="text-3xl sm:text-4xl md:text-5xl pb-1.5 font-extrabold bg-gradient-to-r from-[#dfc797] via-[#fff2d6] to-[#dfc797] bg-clip-text text-transparent mb-2 drop-shadow-lg tracking-tight text-center transition-all duration-700 ease-out transform"
         style={{
-          fontFamily: "Montserrat, Inter, sans-serif",
+          fontFamily: "Nexa, Arial, sans-serif",
           color: headingColor,
         }}
       >
@@ -58,7 +58,7 @@ const Location = ({ contacts = [], directors = [], headingColor }) => {
           </div>
           <p
             className="text-[#fff2d6] max-w-2xl mx-auto font-medium tracking-wide text-base sm:text-lg my-8"
-            style={{ fontFamily: "Inter, sans-serif" }}
+            style={{ fontFamily: "Nexa, Arial, sans-serif" }}
           >
             364-E/1, M. A. Block E 1 Phase 1 Johar Town, Lahore, Punjab 54700
           </p>

@@ -50,7 +50,8 @@ export default function Home() {
       </section>
 
       <section className="w-full">
-        <Categories id="Categories" /> {/* Updated id to "Categories"  since the navbar was scrolling to #Categories and not #categories*/}
+        <Categories id="Categories" />
+        {/* Updated id to "Categories"  since the navbar was scrolling to #Categories and not #categories*/}
       </section>
 
       {/* registratons */}
@@ -58,7 +59,7 @@ export default function Home() {
         <div className="bg-gradient-to-br from-[#232323]/80 to-[#181818]/80 backdrop-blur pt-15 pb-10 sm:pt-14 px-6 lg:px-10">
           <div ref={contactRef} className="mx-auto">
             <h2
-              className={`Headings text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#dfc797] via-[#fff2d6] to-[#dfc797] bg-clip-text text-transparent mb-2 drop-shadow-lg transition-all duration-700 ease-out transform ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`text-3xl sm:text-4xl md:text-5xl pb-1.5 font-extrabold bg-gradient-to-r from-[#dfc797] via-[#fff2d6] to-[#dfc797] bg-clip-text text-transparent mb-2 drop-shadow-lg tracking-tight text-center transition-all duration-700 ease-out transform ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             >
               Registrations
             </h2>
@@ -75,14 +76,14 @@ export default function Home() {
                   >
                     <div
                       className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1"
-                      style={{ fontFamily: "Montserrat, Inter, sans-serif" }}
+                      style={{ fontFamily: "Nexa, Arial, sans-serif" }}
                     >
                       Director Registrations
                     </div>
 
                     <div
                       className="font-bold text-base sm:text-lg text-[#dfc797]"
-                      style={{ fontFamily: "Montserrat, Inter, sans-serif" }}
+                      style={{ fontFamily: "Nexa, Arial, sans-serif" }}
                     >
                       {regiInfo.president.name}
                     </div>
@@ -90,7 +91,12 @@ export default function Home() {
                       href={`tel:${regiInfo.president.phone}`}
                       className="inline-flex items-center justify-center gap-2 text-[#232323] bg-[#dfc797]/80 hover:bg-[#fff2d6] px-4 py-2 rounded-full font-bold shadow transition-colors duration-150 text-sm mt-2"
                     >
-                      <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
                         <path
                           fill="#232323"
                           d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"
@@ -106,13 +112,13 @@ export default function Home() {
                   >
                     <div
                       className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1"
-                      style={{ fontFamily: "Montserrat, Inter, sans-serif" }}
+                      style={{ fontFamily: "Nexa, Arial sans-serif" }}
                     >
                       Director Registrations
                     </div>
                     <div
                       className="font-bold text-base sm:text-lg text-[#dfc797]"
-                      style={{ fontFamily: "Montserrat, Inter, sans-serif" }}
+                      style={{ fontFamily: "Nexa, Arial sans-serif" }}
                     >
                       {regiInfo.vicePresident.name}
                     </div>
@@ -120,7 +126,12 @@ export default function Home() {
                       href={`tel:${regiInfo.vicePresident.phone}`}
                       className="inline-flex items-center justify-center gap-2 text-[#232323] bg-[#dfc797]/80 hover:bg-[#fff2d6] px-4 py-2 rounded-full font-bold shadow transition-colors duration-150 text-sm mt-2"
                     >
-                      <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
                         <path
                           fill="#232323"
                           d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"
@@ -131,7 +142,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <Location headingColor="#f4c860" />
+              <Location headingColor="transparent" />
             </div>
           </div>
         </div>

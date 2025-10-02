@@ -16,7 +16,7 @@ export default function Data({
     >
       <p
         className="font-extrabold text-xl sm:text-2xl mb-3 text-[#dfc797] tracking-wide text-center"
-        style={{ fontFamily: "Montserrat, Inter, sans-serif" }}
+        style={{ fontFamily: "Nexa, Arial, sans-serif" }}
       >
         {category}
       </p>
@@ -24,7 +24,7 @@ export default function Data({
         <div className="text-center">
           <p
             className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1"
-            style={{ fontFamily: "Inter, sans-serif" }}
+            style={{ fontFamily: "Nexa, Arial sans-serif" }}
           >
             {category !== "Registrations"
               ? "President"
@@ -32,7 +32,7 @@ export default function Data({
           </p>
           <p
             className="font-bold text-base sm:text-lg text-[#dfc797]"
-            style={{ fontFamily: "Montserrat, Inter, sans-serif" }}
+            style={{ fontFamily: "Nexa, Arial, sans-serif" }}
           >
             {president.name}
           </p>
@@ -52,7 +52,7 @@ export default function Data({
         <div className="pt-2 border-t border-[#dfc797]/20 text-center">
           <p
             className="text-sm sm:text-base text-[#fff2d6] font-semibold mb-1"
-            style={{ fontFamily: "Inter, sans-serif" }}
+            style={{ fontFamily: "Nexa, Arial, sans-serif" }}
           >
             {category !== "Registrations"
               ? "Vice President"
@@ -60,7 +60,7 @@ export default function Data({
           </p>
           <p
             className="font-bold text-base sm:text-lg text-[#dfc797]"
-            style={{ fontFamily: "Montserrat, Inter, sans-serif" }}
+            style={{ fontFamily: "Nexa, Arial, sans-serif" }}
           >
             {vicePresident.name}
           </p>

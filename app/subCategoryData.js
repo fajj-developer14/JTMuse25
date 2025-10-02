@@ -64,7 +64,7 @@ const data = [
     subCategories: [
       { name: "Gartic Phone", path: "/assets/pdf/Media/Gartic.pdf" },
       {
-        name: "lgsjtmuse_(edited)_FINAL_real_3",
+        name: "lgsjtmuse_(edited)_ FINAL_real_3",
         path: "/assets/pdf/MISC/lgsjtmuse_(edited)_FINAL_real_3 Study Guide.pdf",
       },
       {
