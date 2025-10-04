@@ -67,7 +67,7 @@ const data = [
         path: "/assets/pdf/MISC/lgsjtmuse_(edited)_FINAL_real_3 Study Guide.pdf",
       },
       {
-        name: "The The Yellow House",
+        name: "The Yellow House",
         path: "/assets/pdf/MISC/The_Yellow_House.pdf",
       },
       { name: "Pawn to E3", path: "/assets/pdf/MISC/Pawn_to_E3.pdf" },
