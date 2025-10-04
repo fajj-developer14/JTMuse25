@@ -64,7 +64,7 @@ const data = [
     subCategories: [
       {
         name: "lgsjtmuse_(edited)_FINAL_real_3.psd",
-        path: "/assets/pdf/MISC/lgsjtmuse_(edited)_FINAL_real_3.psd",
+        path: "/assets/pdf/MISC/lgsjtmuse_(edited)_FINAL_real_3 Study Guide.pdf",
       },
       {
         name: "The The Yellow House",
